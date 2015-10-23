@@ -5,17 +5,17 @@
 		
     <name>Motion Device</name>
     <description>
-        Motion Device.
+        Motion Device
     </description>
 	
 	<author href="http://www.dotter.com.br" email="eduardo@dotter.com.br">
     Dotter do Brasil Ltda
     </author>
 	
-	<gap:plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />	
-	<gap:plugin name="cordova.plugins.diagnostic" source="npm" />
+	<gap:plugin name="org.apache.cordova.device-motion" version="0.1.0" />
     <gap:plugin name="org.apache.cordova.device" />
 		
+	<preference name="exit-on-suspend" value="true" />
 	<preference name="phonegap-version" value="cli-5.2.0" />
     <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />
