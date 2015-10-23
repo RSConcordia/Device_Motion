@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0"
+        id="br.dotter.bluetooth"
+        version   = "1.0.0">
+		
+    <name>Motion Device</name>
+    <description>
+        Motion Device.
+    </description>
+	
+	<author href="http://www.dotter.com.br" email="eduardo@dotter.com.br">
+    Dotter do Brasil Ltda
+    </author>
+	
+	<gap:plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />	
+	<gap:plugin name="cordova.plugins.diagnostic" source="npm" />
+    <gap:plugin name="org.apache.cordova.device" />
+		
+	<preference name="phonegap-version" value="cli-5.2.0" />
+    <preference name="orientation"      value="portrait" />
+    <preference name="target-device"    value="universal" />
+    <preference name="fullscreen"       value="false" />
+    <preference name="webviewbounce"    value="false" />
+	
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="fullscreen" value="false" />
+    <preference name="DisallowOverscroll" value="true" />   
+</widget>
