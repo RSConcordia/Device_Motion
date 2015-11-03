@@ -4,6 +4,7 @@ var app = {
 											  'Acceleration Y: ' + acceleration.y + '\n' +
 											  'Acceleration Z: ' + acceleration.z + '\n' +
 											  'Timestamp: '      + acceleration.timestamp;
+				setTimeout(accelerometer, 1000);
 			},
 	onError: function() {
 		alert('Error!');
