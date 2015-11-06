@@ -9,9 +9,9 @@ var app = {
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
 	}
 	function motion(acceleration){
-		
+		document.getElementById('status').innerHTML = 'motion...'; 
 		if(inicial == 0){
-			
+			document.getElementById('status').innerHTML = 'motion - if '; 
 			var str_x = acceleration.x;
 			var accel_x = str_x.slice(0, 1);
 			
@@ -29,6 +29,8 @@ var app = {
 		}
 		else 
 		{
+			document.getElementById('status').innerHTML = 'motion - else'; 
+			
 			var str_x = acceleration.x;
 			var accel_x = str_x.slice(0, 1);
 			
@@ -64,10 +66,11 @@ var app = {
 		alert('Error!');
 	}
 	function star(){
+		document.getElementById('status').innerHTML = 'start '; 
 		navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
 	}
 	function motion_accel(acceleration){
-	
+	document.getElementById('status').innerHTML = 'motion_accel '; 
 		if(contador < 5){
 			var input_x = document.createElement("input");
 				input_x.setAttribute("id", 'x'+contador);
