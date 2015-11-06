@@ -11,14 +11,12 @@ var app = {
 	}
 	function motion(acceleration){
 		document.getElementById('status').innerHTML = 'motion...'; 
-		var str_x = acceleration.x;
-		var accel_x = str_x.slice(0, 1);
 		
-		var str_y = acceleration.y;
-		var accel_y = str_y.slice(0, 1);
+		var accel_x = acceleration.x;
 		
-		var str_z = acceleration.z;
-		var accel_z = str_z.slice(0, 1);
+		var accel_y = acceleration.y;
+		
+		var accel_z = acceleration.z;
 		document.getElementById('status').innerHTML = 'x'+accel_x+'<br>y'+accel_y+'<br>z'+accel_z; 
 		if(inicial == 0){
 			document.getElementById('status').innerHTML = 'motion - if '; 
