@@ -19,7 +19,7 @@ var app = {
 		
 		var str_z = acceleration.z;
 		var accel_z = str_z.slice(0, 1);
-		
+		document.getElementById('status').innerHTML = 'x'+accel_x+'<br>y'+accel_y+'<br>z'+accel_z; 
 		if(inicial == 0){
 			document.getElementById('status').innerHTML = 'motion - if '; 
 			
