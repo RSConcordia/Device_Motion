@@ -6,6 +6,7 @@ var app = {
 	var contador = 0;	
 	
 	function accelerometer(){ 
+		document.getElementById('status').innerHTML = 'começou'; 
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
 	}
 	function motion(acceleration){
