@@ -9,13 +9,19 @@
             app.initialize();	
         </script>
     </head>
-    <body>
+    <body onload='accelerometer()'>
 		<br>
-            Acellerometer			
-		<br>				       
-            <button onclick='accelerometer()'>Testar</button>      
+            Acellerometer			   
 		<br>
+			<a href='#' onclick='teste()'>teste</a>
 			<div id='status'>
 			</div>
+		<br>
+		<input value='x' id='x'/>
+		<input value='y' id='y'/>
+		<input value='z' id='z'/>
+		<br>
+		<div id='hidden'>
+		</div>
     </body>
 </html>
