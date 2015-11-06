@@ -17,7 +17,6 @@ var app = {
 		var accel_y = acceleration.y;
 		
 		var accel_z = acceleration.z;
-		document.getElementById('status').innerHTML = 'x'+accel_x+'<br>y'+accel_y+'<br>z'+accel_z; 
 		if(inicial == 0){
 			document.getElementById('status').innerHTML = 'motion - if '; 
 			
@@ -56,7 +55,7 @@ var app = {
 	function error(){
 		alert('Error!');
 	}
-	function star(){
+	function start(){
 		document.getElementById('status').innerHTML = 'start '; 
 		navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
 	}
