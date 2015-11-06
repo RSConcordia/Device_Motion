@@ -10,17 +10,18 @@ var app = {
 	}
 	function motion(acceleration){
 		document.getElementById('status').innerHTML = 'motion...'; 
+		var str_x = acceleration.x;
+		var accel_x = str_x.slice(0, 1);
+		
+		var str_y = acceleration.y;
+		var accel_y = str_y.slice(0, 1);
+		
+		var str_z = acceleration.z;
+		var accel_z = str_z.slice(0, 1);
+		
 		if(inicial == 0){
 			document.getElementById('status').innerHTML = 'motion - if '; 
-			var str_x = acceleration.x;
-			var accel_x = str_x.slice(0, 1);
 			
-			var str_y = acceleration.y;
-			var accel_y = str_y.slice(0, 1);
-			
-			var str_z = acceleration.z;
-			var accel_z = str_z.slice(0, 1);
-		
 			document.getElementById('x').value = accel_x; 
 			document.getElementById('y').value = accel_y;
 			document.getElementById('z').value = accel_z;
@@ -30,15 +31,6 @@ var app = {
 		else 
 		{
 			document.getElementById('status').innerHTML = 'motion - else'; 
-			
-			var str_x = acceleration.x;
-			var accel_x = str_x.slice(0, 1);
-			
-			var str_y = acceleration.y;
-			var accel_y = str_y.slice(0, 1);
-			
-			var str_z = acceleration.z;
-			var accel_z = str_z.slice(0, 1);
 			
 			var x =	document.getElementById('x').value; 
 			var y =	document.getElementById('y').value;
@@ -101,7 +93,7 @@ var app = {
 			document.getElementById('y'+i).value;
 			document.getElementById('z'+i).value;
 		}	*/
-		alert('até aqui!!!');
+		document.getElementById('status').innerHTML = 'Até !!! ';
 	}
 	
 	
