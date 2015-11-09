@@ -6,19 +6,20 @@ var app = {
 	var contador = 0;	
 	
 	function accelerometer(){ 
-		document.getElementById('status').innerHTML = 'começou'; 
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
 	}
 	function motion(acceleration){
-		document.getElementById('status').innerHTML = 'motion...'; 
 		
 		var accel_x = acceleration.x;
+		var accel_x = accel_x.slice(0, 2); 
 		
 		var accel_y = acceleration.y;
+		var accel_y = accel_y.slice(0, 2); 
 		
 		var accel_z = acceleration.z;
+		var accel_z = accel_z.slice(0, 2); 
+		
 		if(inicial == 0){
-			document.getElementById('status').innerHTML = 'motion - if '; 
 			
 			document.getElementById('x').value = accel_x; 
 			document.getElementById('y').value = accel_y;
@@ -27,9 +28,7 @@ var app = {
 			inicial++;
 		}
 		else 
-		{
-			document.getElementById('status').innerHTML = 'motion - else'; 
-			
+		{			
 			var x =	document.getElementById('x').value; 
 			var y =	document.getElementById('y').value;
 			var z =	document.getElementById('z').value;
@@ -56,25 +55,32 @@ var app = {
 		alert('Error!');
 	}
 	function start(){
-		document.getElementById('status').innerHTML = 'start '; 
 		navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
 	}
 	function motion_accel(acceleration){
-	document.getElementById('status').innerHTML = 'motion_accel '; 
+		var accel_x = acceleration.x;
+		var acceleration_x = accel_x.slice(0, 2); 
+		
+		var accel_y = acceleration.y;
+		var acceleration_y = accel_y.slice(0, 2); 
+		
+		var accel_z = acceleration.z;
+		var acceleration_z = accel_z.slice(0, 2); 
+		
 		if(contador < 5){
 			var input_x = document.createElement("input");
 				input_x.setAttribute("id", 'x'+contador);
-				input_x.setAttribute("value", acceleration.x);
+				input_x.setAttribute("value", acceleration_x);
 			document.getElementById('hidden').appendChild(input_x);
 			
 			var input_y = document.createElement("input");
 				input_y.setAttribute("id", 'y'+contador);
-				input_y.setAttribute("value", acceleration.y);
+				input_y.setAttribute("value", acceleration_y);
 			document.getElementById('hidden').appendChild(input_y);
 			
 			var input_z = document.createElement("input");
 				input_z.setAttribute("id", 'z'+contador);
-				input_z.setAttribute("value", acceleration.z);
+				input_z.setAttribute("value", acceleration_z);
 			document.getElementById('hidden').appendChild(input_z);
 			
 			contador++;
@@ -90,8 +96,7 @@ var app = {
 			document.getElementById('x'+i).value;
 			document.getElementById('y'+i).value;
 			document.getElementById('z'+i).value;
-		}	*/
-		document.getElementById('status').innerHTML = 'Até !!! ';
+		}	*/ 
 	}
 	
 	
