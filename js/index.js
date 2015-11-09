@@ -10,14 +10,14 @@ var app = {
 	}
 	function motion(acceleration){
 		
-		var accel_x = acceleration.x;
-		var accel_x = accel_x.slice(0, 2); 
+		var accel_x = parseInt(acceleration.x);
+		//var accel_x = accel_x.slice(0, 1); 
 		
-		var accel_y = acceleration.y;
-		var accel_y = accel_y.slice(0, 2); 
+		var accel_y = parseInt(acceleration.y);
+		//var accel_y = accel_y.slice(0, 1); 
 		
-		var accel_z = acceleration.z;
-		var accel_z = accel_z.slice(0, 2); 
+		var accel_z = parseInt(acceleration.z);
+		//var accel_z = accel_z.slice(0, 1); 
 		
 		if(inicial == 0){
 			
