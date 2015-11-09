@@ -59,13 +59,13 @@ var app = {
 	}
 	function motion_accel(acceleration){
 		var accel_x = acceleration.x;
-		var acceleration_x = accel_x.slice(0, 2); 
+		var acceleration_x = parseInt(accel_x); 
 		
 		var accel_y = acceleration.y;
-		var acceleration_y = accel_y.slice(0, 2); 
+		var acceleration_y =parseInt(accel_y); 
 		
 		var accel_z = acceleration.z;
-		var acceleration_z = accel_z.slice(0, 2); 
+		var acceleration_z = parseInt(accel_z); 
 		
 		if(contador < 5){
 			var input_x = document.createElement("input");
