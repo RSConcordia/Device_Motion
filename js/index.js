@@ -68,11 +68,10 @@ var app = {
 	function error(){
 		alert('Error!');
 	}
-	function start(){alert("#5");
+	function start(){
 		navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
 	}
 	function motion_accel(acceleration){
-		alert("#6");
 		var accel_x = acceleration.x;
 		var acceleration_x = parseInt(accel_x); 
 		
@@ -102,7 +101,7 @@ var app = {
 			document.getElementById('hidden').appendChild(input_z);
 			
 			contador++;
-			setTimeout(star, 500);
+			setTimeout(start, 500);
 		}
 		else
 		{		alert("#7");
