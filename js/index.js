@@ -38,8 +38,7 @@ var app = {
 				}
 				else
 				{
-					document.getElementById('status').innerHTML = "Novamente z";
-					document.getElementById('status').innerHTML = inicial;
+					document.getElementById('status').innerHTML = "Novamente x;
 					setTimeout(accelerometer, 500);	
 				}
 			}
@@ -100,8 +99,9 @@ var app = {
 				input_z.setAttribute("value", acceleration_z);
 			document.getElementById('hidden').appendChild(input_z);
 			
+			document.getElementById('status').innerHTML = contador;
 			contador++;
-			setTimeout(start, 500);
+			setTimeout(start, 1000);
 		}
 		else
 		{		
