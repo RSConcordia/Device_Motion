@@ -4,7 +4,7 @@ var app = {
 	var inicial = 0;
 	var contador = 0;	
 	
-	function accelerometer(){
+	function accelerometer(){ 
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
 	}
 	function motion(acceleration){
