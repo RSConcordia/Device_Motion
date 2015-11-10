@@ -118,7 +118,7 @@ var app = {
 			
 			document.getElementById('status').innerHTML += "<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------";
 		}	
-		var inicial = 0;
+		inicial = 0;
 	}
 	
 	
