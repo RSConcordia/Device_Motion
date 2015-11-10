@@ -18,17 +18,17 @@ var app = {
 		var accel_z = parseInt(accel_z); 
 		
 		if(inicial == 0){
-			document.getElementById('x').value = accel_x; 
-			document.getElementById('y').value = accel_y;
-			document.getElementById('z').value = accel_z;
+			localStorage.setItem("x", accel_x);	
+			localStorage.setItem("y", accel_y);	
+			localStorage.setItem("z", accel_z);	
 			inicial = 1;
 			setTimeout(accelerometer, 500);
 		}
 		else 
 		{		
-			var x =	document.getElementById('x').value; 
-			var y =	document.getElementById('y').value;
-			var z =	document.getElementById('z').value;
+			var x =	localStorage.getItem("x");
+			var y =	localStorage.getItem("y");
+			var z =	localStorage.getItem("z");
 			
 			if(accel_x != x){
 				if(accel_y != y || accel_z != z){
@@ -65,9 +65,6 @@ var app = {
 			}
 		}
 	}
-	function error(){
-		alert('Error!');
-	}
 	function start(){
 		navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
 	}
@@ -90,11 +87,12 @@ var app = {
 		{		
 			inicial = 0;
 			contador = 0;	
+			document.getElementById('status').innerHTML += "<br>...";
 		}
 	}
-	
-	
-	
+	function error(){
+		alert('Error!');
+	}
 	
 	
 	
