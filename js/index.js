@@ -5,11 +5,11 @@ var app = {
 	var inicial = 0;
 	var contador = 0;	
 	
-	function accelerometer(){ //alert("#1");
+	function accelerometer(){ alert("#1");
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
 	}
 	function motion(acceleration){
-		//alert("#2");
+		alert("#2");
 		var accel_x = acceleration.x;
 		var accel_x = parseInt(accel_x); 
 		
@@ -20,7 +20,7 @@ var app = {
 		var accel_z = parseInt(accel_z); 
 		
 		if(inicial == 0){
-		//	alert("#3");
+			alert("#3");
 			document.getElementById('x').value = accel_x; 
 			document.getElementById('y').value = accel_y;
 			document.getElementById('z').value = accel_z;
@@ -30,7 +30,7 @@ var app = {
 		}
 		else 
 		{		
-			//alert("#4");
+			alert("#4");
 				
 			var x =	document.getElementById('x').value; 
 			var y =	document.getElementById('y').value;
@@ -66,13 +66,13 @@ var app = {
 		}
 	}
 	function error(){
-		//alert('Error!');
+		alert('Error!');
 	}
-	function start(){//alert("#5");
+	function start(){alert("#5");
 		navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
 	}
 	function motion_accel(acceleration){
-		//alert("#6");
+		alert("#6");
 		var accel_x = acceleration.x;
 		var acceleration_x = parseInt(accel_x); 
 		
@@ -105,7 +105,7 @@ var app = {
 			setTimeout(star, 500);
 		}
 		else
-		{	//	alert("#7");
+		{		alert("#7");
 			certificacao();
 		}
 	}
