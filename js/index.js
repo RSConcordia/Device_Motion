@@ -88,7 +88,7 @@ var app = {
 		}
 		else
 		{		
-			alert("fim");
+			document.getElementById('status').innerHTML += "<br>..§..";
 		}
 	}
 	
