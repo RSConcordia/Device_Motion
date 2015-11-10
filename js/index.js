@@ -38,21 +38,18 @@ var app = {
 					start();
 				}
 			}
-			else if(accel_y != y){
+			if(accel_y != y){
 					if(accel_x != x || accel_z != z){
 						start();
 				}
 			}			
-			else if(accel_z != z){
+			if(accel_z != z){
 					if(accel_y != y || accel_x != x){
 						start();
 				}
 			} 
-				else
-				{
-				document.getElementById('status').innerHTML = "Aguardando...";
-				setTimeout(accelerometer, 500);
-			}			
+			document.getElementById('status').innerHTML = "Aguardando...";
+			setTimeout(accelerometer, 500);			
 		}
 	}
 	function error(){
