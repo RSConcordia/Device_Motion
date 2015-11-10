@@ -22,8 +22,7 @@ var app = {
 			document.getElementById('y').value = accel_y;
 			document.getElementById('z').value = accel_z;
 			inicial = 1;
-			setTimeout(accelerometer, 500);	
-			
+			setTimeout(accelerometer, 500);
 		}
 		else 
 		{		
@@ -82,43 +81,15 @@ var app = {
 		var accel_z = acceleration.z;
 		var acceleration_z = parseInt(accel_z); 
 		
-		if(contador < 5){
-			var input_x = document.createElement("input");
-				input_x.setAttribute("id", 'x'+contador);
-				input_x.setAttribute("type", 'hidden');
-				input_x.setAttribute("value", acceleration_x);
-			document.getElementById('hidden').appendChild(input_x);
-			
-			var input_y = document.createElement("input");
-				input_y.setAttribute("id", 'y'+contador);
-				input_x.setAttribute("type", 'hidden');
-				input_y.setAttribute("value", acceleration_y);
-			document.getElementById('hidden').appendChild(input_y);
-			
-			var input_z = document.createElement("input");
-				input_z.setAttribute("id", 'z'+contador);
-				input_x.setAttribute("type", 'hidden');
-				input_z.setAttribute("value", acceleration_z);
-			document.getElementById('hidden').appendChild(input_z);
-			
-			document.getElementById('status').innerHTML = contador;
+		if(contador < 5){			
+			document.getElementById('status').innerHTML += contador+"<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------<br>";
 			contador++;
 			setTimeout(start, 1000);
 		}
 		else
 		{		
-			certificacao();
+			alert("fim");
 		}
-	}
-	function certificacao(){		
-		for(i = 0; i < 5; i++){
-			var x = document.getElementById('x'+i).value;
-			var y = document.getElementById('y'+i).value;
-			var z = document.getElementById('z'+i).value;
-			
-			document.getElementById('status').innerHTML += "<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------";
-		}	
-		inicial = 0;
 	}
 	
 	
