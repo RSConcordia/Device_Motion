@@ -21,9 +21,9 @@ var app = {
 			document.getElementById('x').value = accel_x; 
 			document.getElementById('y').value = accel_y;
 			document.getElementById('z').value = accel_z;
-			document.getElementById('status').innerHTML = "star...";
-			setTimeout(accelerometer, 500);	
 			inicial = 1;
+			setTimeout(accelerometer, 500);	
+			
 		}
 		else 
 		{		
@@ -37,7 +37,8 @@ var app = {
 				}
 				else
 				{
-					document.getElementById('status').innerHTML = "Novamente x";
+					document.getElementById('status').innerHTML = "Novamente x "+inicial;
+					inicial++;
 					setTimeout(accelerometer, 500);	
 				}
 			}
@@ -47,7 +48,8 @@ var app = {
 				}
 				else
 				{
-					document.getElementById('status').innerHTML = "Novamente y";
+					document.getElementById('status').innerHTML = "Novamente z "+inicial;
+					inicial++;
 					setTimeout(accelerometer, 500);	
 				}
 			}			
@@ -57,7 +59,8 @@ var app = {
 				}
 				else
 				{
-					document.getElementById('status').innerHTML = "Novamente z";
+					document.getElementById('status').innerHTML = "Novamente y "+inicial;
+					inicial++;
 					setTimeout(accelerometer, 500);	
 				}
 			}
