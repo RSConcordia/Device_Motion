@@ -88,7 +88,8 @@ var app = {
 		}
 		else
 		{		
-			document.getElementById('status').innerHTML += "<br>..§..";
+			inicial = 0;
+			contador = 0;	
 		}
 	}
 	
