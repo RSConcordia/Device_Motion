@@ -73,16 +73,16 @@ var app = {
 	}
 	function motion_accel(acceleration){
 		var accel_x = acceleration.x;
-		var acceleration_x = parseInt(accel_x); 
+		var x = parseInt(accel_x); 
 		
 		var accel_y = acceleration.y;
-		var acceleration_y =parseInt(accel_y); 
+		var y =parseInt(accel_y); 
 		
 		var accel_z = acceleration.z;
-		var acceleration_z = parseInt(accel_z); 
+		var z = parseInt(accel_z); 
 		
 		if(contador < 5){			
-			document.getElementById('status').innerHTML += contador+"<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------<br>";
+			document.getElementById('status').innerHTML += "<br>"+contador+"<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------<br>";
 			contador++;
 			setTimeout(start, 1000);
 		}
