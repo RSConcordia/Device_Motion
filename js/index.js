@@ -1,7 +1,6 @@
 var app = {			
 	
 	};
-
 	var inicial = 0;
 	var contador = 0;	
 	
@@ -22,7 +21,7 @@ var app = {
 			document.getElementById('x').value = accel_x; 
 			document.getElementById('y').value = accel_y;
 			document.getElementById('z').value = accel_z;
-			document.getElementById('status').innerHTML = "Aguardando...";
+			document.getElementById('status').innerHTML = "star...";
 			setTimeout(accelerometer, 500);	
 			inicial = 1;
 		}
@@ -31,14 +30,14 @@ var app = {
 			var x =	document.getElementById('x').value; 
 			var y =	document.getElementById('y').value;
 			var z =	document.getElementById('z').value;
-			inicial++;
+			
 			if(accel_x != x){
 				if(accel_y != y || accel_z != z){
 					start();
 				}
 				else
 				{
-					document.getElementById('status').innerHTML = "Novamente x;
+					document.getElementById('status').innerHTML = "Novamente x";
 					setTimeout(accelerometer, 500);	
 				}
 			}
@@ -68,9 +67,10 @@ var app = {
 		alert('Error!');
 	}
 	function start(){
+		document.getElementById('status').innerHTML = "Fim...";
 		navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
 	}
-	function motion_accel(acceleration){
+/*	function motion_accel(acceleration){
 		var accel_x = acceleration.x;
 		var acceleration_x = parseInt(accel_x); 
 		
@@ -117,7 +117,7 @@ var app = {
 			document.getElementById('status').innerHTML += "<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------";
 		}	
 	}
-	
+	*/
 	
 	
 	
