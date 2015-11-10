@@ -38,15 +38,27 @@ var app = {
 				if(accel_y != y || accel_z != z){
 					start();
 				}
+				else
+				{
+					setTimeout(accelerometer, 500);	
+				}
 			}
 			if(accel_y != y){
 				if(accel_x != x || accel_z != z){
 					start();
 				}
+				else
+				{
+					setTimeout(accelerometer, 500);	
+				}
 			}			
 			if(accel_z != z){
 				if(accel_y != y || accel_x != x){
 					start();
+				}
+				else
+				{
+					setTimeout(accelerometer, 500);	
 				}
 			}
 		}
