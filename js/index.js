@@ -25,7 +25,7 @@ var app = {
 			document.getElementById('y').value = accel_y;
 			document.getElementById('z').value = accel_z;
 			
-			inicial++;
+			inicial = 1;
 		}
 		else 
 		{			
@@ -38,18 +38,22 @@ var app = {
 					start();
 				}
 			}
-			if(accel_y != y){
-				if(accel_x != x || accel_z != z){
+			else if(accel_y != y){
+					if(accel_x != x || accel_z != z){
 						start();
-					}
+				}
 			}			
-			if(accel_z != z){
-				if(accel_y != y || accel_x != x){
-					start();
+			else if(accel_z != z){
+					if(accel_y != y || accel_x != x){
+						start();
 				}
 			} 
+				else
+				{
+				document.getElementById('status').innerHTML = "Aguardando...";
+				setTimeout(accelerometer, 500);
+			}			
 		}
-			setTimeout(accelerometer, 500);
 	}
 	function error(){
 		alert('Error!');
@@ -70,16 +74,19 @@ var app = {
 		if(contador < 5){
 			var input_x = document.createElement("input");
 				input_x.setAttribute("id", 'x'+contador);
+				input_x.setAttribute("type", 'hidden');
 				input_x.setAttribute("value", acceleration_x);
 			document.getElementById('hidden').appendChild(input_x);
 			
 			var input_y = document.createElement("input");
 				input_y.setAttribute("id", 'y'+contador);
+				input_x.setAttribute("type", 'hidden');
 				input_y.setAttribute("value", acceleration_y);
 			document.getElementById('hidden').appendChild(input_y);
 			
 			var input_z = document.createElement("input");
 				input_z.setAttribute("id", 'z'+contador);
+				input_x.setAttribute("type", 'hidden');
 				input_z.setAttribute("value", acceleration_z);
 			document.getElementById('hidden').appendChild(input_z);
 			
@@ -92,11 +99,13 @@ var app = {
 		}
 	}
 	function certificacao(){		
-	/*	for(i = 0; i < 5; i++){
-			document.getElementById('x'+i).value;
-			document.getElementById('y'+i).value;
-			document.getElementById('z'+i).value;
-		}	*/ 
+		for(i = 0; i < 5; i++){
+			var x = document.getElementById('x'+i).value;
+			var y = document.getElementById('y'+i).value;
+			var z = document.getElementById('z'+i).value;
+			
+			document.getElementById().innerHTML += "<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>____________§___________";
+		}	
 	}
 	
 	
