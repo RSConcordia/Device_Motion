@@ -70,10 +70,9 @@ var app = {
 		alert('Error!');
 	}
 	function start(){
-		document.getElementById('status').innerHTML = "Fim...";
-	//	navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
+		navigator.accelerometer.getCurrentAcceleration(motion_accel, error);		
 	}
-/*	function motion_accel(acceleration){
+	function motion_accel(acceleration){
 		var accel_x = acceleration.x;
 		var acceleration_x = parseInt(accel_x); 
 		
@@ -120,7 +119,7 @@ var app = {
 			document.getElementById('status').innerHTML += "<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------";
 		}	
 	}
-	*/
+	
 	
 	
 	
