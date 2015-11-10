@@ -5,11 +5,10 @@ var app = {
 	var inicial = 0;
 	var contador = 0;	
 	
-	function accelerometer(){ alert("#1");
+	function accelerometer(){ 
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
 	}
 	function motion(acceleration){
-		alert("#2");
 		var accel_x = acceleration.x;
 		var accel_x = parseInt(accel_x); 
 		
@@ -20,7 +19,6 @@ var app = {
 		var accel_z = parseInt(accel_z); 
 		
 		if(inicial == 0){
-			alert("#3");
 			document.getElementById('x').value = accel_x; 
 			document.getElementById('y').value = accel_y;
 			document.getElementById('z').value = accel_z;
@@ -30,18 +28,18 @@ var app = {
 		}
 		else 
 		{		
-			alert("#4");
-				
 			var x =	document.getElementById('x').value; 
 			var y =	document.getElementById('y').value;
 			var z =	document.getElementById('z').value;
-		
+			inicial++;
 			if(accel_x != x){
 				if(accel_y != y || accel_z != z){
 					start();
 				}
 				else
 				{
+					document.getElementById('status').innerHTML = "Novamente z";
+					document.getElementById('status').innerHTML = inicial;
 					setTimeout(accelerometer, 500);	
 				}
 			}
@@ -51,6 +49,7 @@ var app = {
 				}
 				else
 				{
+					document.getElementById('status').innerHTML = "Novamente y";
 					setTimeout(accelerometer, 500);	
 				}
 			}			
@@ -60,6 +59,7 @@ var app = {
 				}
 				else
 				{
+					document.getElementById('status').innerHTML = "Novamente z";
 					setTimeout(accelerometer, 500);	
 				}
 			}
@@ -104,7 +104,7 @@ var app = {
 			setTimeout(start, 500);
 		}
 		else
-		{		alert("#7");
+		{		
 			certificacao();
 		}
 	}
@@ -114,7 +114,7 @@ var app = {
 			var y = document.getElementById('y'+i).value;
 			var z = document.getElementById('z'+i).value;
 			
-			document.getElementById('status').innerHTML += "<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>____________§___________";
+			document.getElementById('status').innerHTML += "<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------";
 		}	
 	}
 	
