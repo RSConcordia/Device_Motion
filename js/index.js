@@ -36,7 +36,7 @@ var app = {
 				}
 				else
 				{
-					document.getElementById('status').innerHTML = "Novamente x "+inicial;
+					document.getElementById('status').innerHTML = inicial;
 					inicial++;
 					setTimeout(accelerometer, 500);	
 				}
@@ -47,7 +47,7 @@ var app = {
 				}
 				else
 				{
-					document.getElementById('status').innerHTML = "Novamente z "+inicial;
+					document.getElementById('status').innerHTML = inicial;
 					inicial++;
 					setTimeout(accelerometer, 500);	
 				}
@@ -58,7 +58,7 @@ var app = {
 				}
 				else
 				{
-					document.getElementById('status').innerHTML = "Novamente y "+inicial;
+					document.getElementById('status').innerHTML = inicial;
 					inicial++;
 					setTimeout(accelerometer, 500);	
 				}
@@ -84,7 +84,7 @@ var app = {
 		if(contador < 5){			
 			document.getElementById('status').innerHTML += "<br>"+contador+"<br>X "+x+"<br>Y "+y+"<br>Z "+z+"<br>------§------<br>";
 			contador++;
-			setTimeout(start, 1000);
+			setTimeout(start, 3000);
 		}
 		else
 		{		
