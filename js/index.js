@@ -39,17 +39,20 @@ var app = {
 				}
 			}
 			if(accel_y != y){
-					if(accel_x != x || accel_z != z){
-						start();
+				if(accel_x != x || accel_z != z){
+					start();
 				}
 			}			
 			if(accel_z != z){
-					if(accel_y != y || accel_x != x){
-						start();
+				if(accel_y != y || accel_x != x){
+					start();
 				}
-			} 
-			document.getElementById('status').innerHTML = "Aguardando...";
-			setTimeout(accelerometer, 500);			
+			}
+			else
+			{
+				document.getElementById('status').innerHTML = "Aguardando...";
+				setTimeout(accelerometer, 500);			
+			}
 		}
 	}
 	function error(){
