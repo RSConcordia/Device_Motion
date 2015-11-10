@@ -24,7 +24,8 @@ var app = {
 			document.getElementById('x').value = accel_x; 
 			document.getElementById('y').value = accel_y;
 			document.getElementById('z').value = accel_z;
-			
+			document.getElementById('status').innerHTML = "Aguardando...";
+			setTimeout(accelerometer, 500);	
 			inicial = 1;
 		}
 		else 
@@ -47,11 +48,6 @@ var app = {
 				if(accel_y != y || accel_x != x){
 					start();
 				}
-			}
-			else
-			{
-				document.getElementById('status').innerHTML = "Aguardando...";
-				setTimeout(accelerometer, 500);			
 			}
 		}
 	}
