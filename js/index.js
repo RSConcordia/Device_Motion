@@ -6,13 +6,7 @@ var app = {
 	var verificador_y = 0;
 	var verificador_z = 0;
 	function start(){
-		document.getElementById('status').innerHTML = "";
-		
-		contador = 0;	
-		verificador_x = 0;
-		verificador_y = 0;
-		verificador_z = 0;
-		
+		document.getElementById('status').innerHTML = "";		
 		accelerometer();
 	}	
 	function accelerometer(){ 
@@ -71,5 +65,10 @@ var app = {
 			{
 				document.getElementById('status').innerHTML += "<br>O dispositivo nao mudou de posicao.";
 			}
+		
+		contador = 0;	
+		verificador_x = 0;
+		verificador_y = 0;
+		verificador_z = 0;
 	}
 	
