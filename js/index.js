@@ -2,7 +2,9 @@ var app = {
 	
 	};
 	var contador = 0;	
-	var verificador = 0;
+	var verificador_x = 0;
+	var verificador_y = 0;
+	var verificador_z = 0;
 	
 	function accelerometer(){ 
 		document.getElementById('status').innerHTML = "";
@@ -40,14 +42,24 @@ var app = {
 	function verificacao(){
 		for (primeiro = 0; primeiro < 4; primeiro++){
 				var segundo = primeiro+1; 
-				if (localStorage.getItem("string"+primeiro) != localStorage.getItem("string"+segundo)){	
-					verificador++;
+				if (localStorage.getItem("accel_x"+primeiro) != localStorage.getItem("accel_x"+segundo)){	
+					verificador_x++;
+				}
+				if (localStorage.getItem("accel_y"+primeiro) != localStorage.getItem("accel_y"+segundo)){	
+					verificador_y++;
+				}
+				if (localStorage.getItem("accel_z"+primeiro) != localStorage.getItem("accel_z"+segundo)){	
+					verificador_z++;
 				}
 			}
-		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador+" mudan?as";
+		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudan?as no eixo X";
+		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudan?as no eixo Y";
+		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudan?as no eixo Z";
 		
 		contador = 0;	
-		verificador = 0;
+		verificador_x = 0;
+		verificador_y = 0;
+		verificador_z = 0;
 	}
 	
 	
