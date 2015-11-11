@@ -7,6 +7,12 @@ var app = {
 	var verificador_z = 0;
 	function start(){
 		document.getElementById('status').innerHTML = "";
+		
+		contador = 0;	
+		verificador_x = 0;
+		verificador_y = 0;
+		verificador_z = 0;
+		
 		accelerometer();
 	}	
 	function accelerometer(){ 
@@ -56,11 +62,14 @@ var app = {
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
-		
-		contador = 0;	
-		verificador_x = 0;
-		verificador_y = 0;
-		verificador_z = 0;
 	}
-	
+	function (){
+		if (verificador_x > 2 && verificador_y > 2 || verificador_z > 2 && verificador_y > 2 || verificador_x > 2 && verificador_z > 2 ){
+				document.getElementById('status').innerHTML += "<br>O dispositivo mudou de posicao";
+			}
+			else
+			{
+				document.getElementById('status').innerHTML += "<br>O dispositivo nao mudou de posicao.";
+			}
+	}
 	
