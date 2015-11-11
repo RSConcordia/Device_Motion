@@ -5,9 +5,11 @@ var app = {
 	var verificador_x = 0;
 	var verificador_y = 0;
 	var verificador_z = 0;
-	
-	function accelerometer(){ 
+	function start(){
 		document.getElementById('status').innerHTML = "";
+		accelerometer();
+	}	
+	function accelerometer(){ 
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
 	}
 	function motion(acceleration){
@@ -25,16 +27,15 @@ var app = {
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				document.getElementById('status').innerHTML += "<br>contador "+contador+"<br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
+				document.getElementById('status').innerHTML += "<br>contador "+contador+"<br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z+"<br>----------";
 				
 				contador++;
-				accelerometer();
+				setTimeout(accelerometer, 3000);
 			} 
 			else
 			{
 				verificacao();
 			}
-		
 	}
 	function error(){
 		alert('Error!');
@@ -52,9 +53,9 @@ var app = {
 					verificador_z++;
 				}
 			}
-		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudan?as no eixo X";
-		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudan?as no eixo Y";
-		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudan?as no eixo Z";
+		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
+		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
+		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
 		
 		contador = 0;	
 		verificador_x = 0;
