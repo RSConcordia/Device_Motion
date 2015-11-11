@@ -108,10 +108,10 @@
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 	
-		if(contador < 10){			
+		if(contador < 5){			
 			document.getElementById('status').innerHTML += "<br>"+contador+"<br>X "+accel_x+"<br>Y "+accel_y+"<br>Z "+accel_z+"<br>------------<br>";
 			contador++;
-			setTimeout(accelerometer, 1500);
+			setTimeout(accelerometer, 800);
 		}
 		else
 		{		
