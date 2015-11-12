@@ -30,7 +30,7 @@ var app = {
 				document.getElementById('status').innerHTML += "<br>contador "+contador+"<br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z+"<br>----------";
 				
 				contador++;
-				setTimeout(accelerometer, 3000);
+				setTimeout(accelerometer, 800);
 			} 
 			else
 			{
