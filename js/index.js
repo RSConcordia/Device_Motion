@@ -56,12 +56,14 @@ var app = {
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
+		
+		result();
 	}
-	function (){
+	function result(){
 		if (verificador_x > 2 && verificador_y > 2 || verificador_z > 2 && verificador_y > 2 || verificador_x > 2 && verificador_z > 2 ){
 				document.getElementById('status').innerHTML += "<br>O dispositivo mudou de posicao";
 			}
-			else
+			else 
 			{
 				document.getElementById('status').innerHTML += "<br>O dispositivo nao mudou de posicao.";
 			}
