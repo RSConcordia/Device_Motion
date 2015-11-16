@@ -22,7 +22,7 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(contador < ){
+		if(contador < 5 ){
 				localStorage.setItem("accel_x"+contador, accel_x);
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
