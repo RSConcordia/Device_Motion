@@ -22,7 +22,7 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(contador < 5){
+		if(contador < ){
 				localStorage.setItem("accel_x"+contador, accel_x);
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
@@ -43,7 +43,29 @@ var app = {
 	function verificacao(){
 		for (primeiro = 0; primeiro < 4; primeiro++){
 				var segundo = primeiro+1; 
-				if (localStorage.getItem("accel_x"+primeiro) != localStorage.getItem("accel_x"+segundo)){	
+		
+			//--ddp -> diferença de posição
+				
+				var ddp_x = localStorage.getItem("accel_x"+primeiro) - localStorage.getItem("accel_x"+segundo);
+				var ddp_y = localStorage.getItem("accel_y"+primeiro) - localStorage.getItem("accel_y"+segundo);
+				var ddp_z = localStorage.getItem("accel_z"+primeiro) - localStorage.getItem("accel_z"+segundo);
+				
+				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_x+" no eixo X";
+				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_y+" no eixo Y";
+				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_z+" no eixo Z";
+				
+				if (ddp_x > 3){	
+					verificador_x++;
+				}
+				if (ddp_y > 3){	
+					verificador_y++;
+				}
+				if (ddp_z > 3){	
+					verificador_z++;
+				}
+
+
+		/*	if (localStorage.getItem("accel_x"+primeiro) != localStorage.getItem("accel_x"+segundo)){	
 					verificador_x++;
 				}
 				if (localStorage.getItem("accel_y"+primeiro) != localStorage.getItem("accel_y"+segundo)){	
@@ -51,13 +73,13 @@ var app = {
 				}
 				if (localStorage.getItem("accel_z"+primeiro) != localStorage.getItem("accel_z"+segundo)){	
 					verificador_z++;
-				}
+				} */
 			}
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
 		
-		result();
+		//result();
 	}
 	function result(){
 		if (verificador_x > 2 && verificador_y > 2 || verificador_z > 2 && verificador_y > 2 || verificador_x > 2 && verificador_z > 2 ){
