@@ -5,8 +5,10 @@ var app = {
 	var verificador_x = 0;
 	var verificador_y = 0;
 	var verificador_z = 0;
+	var verificador_c = 0;
+	
 	function start(){
-		document.getElementById('status').innerHTML = "";		
+		document.getElementById('status').innerHTML = "";
 		accelerometer();
 	}	
 	function accelerometer(){ 
@@ -27,18 +29,32 @@ var app = {
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				document.getElementById('status').innerHTML += "<br>contador "+contador+"<br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z+"<br>----------";
+				document.getElementById('status').innerHTML += "<br>contador "+contador+"<br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 				
-				contador++;
-				setTimeout(accelerometer, 800);
+				compass();
 			} 
 			else
 			{
 				verificacao();
 			}
 	}
+	function compass(){
+		navigator.compass.getCurrentHeading(onSuccess, onError);
+	}	
+	function onSuccess(heading) {
+		var compass = heading.magneticHeading;
+		var compass = parseInt(compass); 
+		
+		localStorage.setItem("compass"+contador, compass);
+		document.getElementById('status').innerHTML += "<br> Compass - "+compass+"<br>-----§-----";
+		contador++;
+		setTimeout(accelerometer, 800);
+	}
 	function error(){
 		alert('Error!');
+	}
+	function onError(compassError) {
+		alert('Compass error: ' + compassError.code);
 	}
 	function verificacao(){
 		for (primeiro = 0; primeiro < 4; primeiro++){
@@ -49,11 +65,13 @@ var app = {
 				var ddp_x = localStorage.getItem("accel_x"+primeiro) - localStorage.getItem("accel_x"+segundo);
 				var ddp_y = localStorage.getItem("accel_y"+primeiro) - localStorage.getItem("accel_y"+segundo);
 				var ddp_z = localStorage.getItem("accel_z"+primeiro) - localStorage.getItem("accel_z"+segundo);
+				var ddp_c = localStorage.getItem("compass"+primeiro) - localStorage.getItem("compass"+segundo);
 				
 				document.getElementById('status').innerHTML += "<br>"+segundo;
 				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_x+" no eixo X";
 				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_y+" no eixo Y";
 				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_z+" no eixo Z";
+				document.getElementById('status').innerHTML += "<br>Ddp Compasso "+ddp_c+" no eixo Z";
 				document.getElementById('status').innerHTML += "<br>______________________";
 			
 				if (ddp_x > '3' || ddp_x < '-3'){	
@@ -65,11 +83,15 @@ var app = {
 				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_z++;
 				}
+				if(ddp_c > '90'){
+					verificador_c++;
+				}
 			}
 		
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
+		document.getElementById('status').innerHTML += "<br>Compass teve "+verificador_z+" mudancas de 90º";
 		
 		result();
 	}
@@ -86,5 +108,6 @@ var app = {
 		verificador_x = 0;
 		verificador_y = 0;
 		verificador_z = 0;
+		verificador_c = 0
 	}
 	
