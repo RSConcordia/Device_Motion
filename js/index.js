@@ -54,13 +54,13 @@ var app = {
 				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_y+" no eixo Y";
 				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_z+" no eixo Z";
 				
-				if (ddp_x > 3){	
+				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_x++;
 				}
-				if (ddp_y > 3){	
+				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_y++;
 				}
-				if (ddp_z > 3){	
+				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_z++;
 				}
 
@@ -79,7 +79,7 @@ var app = {
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
 		
-		//result();
+		result();
 	}
 	function result(){
 		if (verificador_x > 2 && verificador_y > 2 || verificador_z > 2 && verificador_y > 2 || verificador_x > 2 && verificador_z > 2 ){
