@@ -63,8 +63,6 @@ var app = {
 				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_z++;
 				}
-
-
 		/*	if (localStorage.getItem("accel_x"+primeiro) != localStorage.getItem("accel_x"+segundo)){	
 					verificador_x++;
 				}
@@ -75,9 +73,11 @@ var app = {
 					verificador_z++;
 				} */
 			}
+		document.getElementById('status').innerHTML += "<br>"+segundo;
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
+		document.getElementById('status').innerHTML += "<br>______________________";
 		
 		result();
 	}
