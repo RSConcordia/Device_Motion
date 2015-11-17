@@ -50,10 +50,12 @@ var app = {
 				var ddp_y = localStorage.getItem("accel_y"+primeiro) - localStorage.getItem("accel_y"+segundo);
 				var ddp_z = localStorage.getItem("accel_z"+primeiro) - localStorage.getItem("accel_z"+segundo);
 				
+				document.getElementById('status').innerHTML += "<br>"+segundo;
 				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_x+" no eixo X";
 				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_y+" no eixo Y";
 				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_z+" no eixo Z";
-				
+				document.getElementById('status').innerHTML += "<br>______________________";
+			
 				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_x++;
 				}
@@ -63,21 +65,11 @@ var app = {
 				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_z++;
 				}
-		/*	if (localStorage.getItem("accel_x"+primeiro) != localStorage.getItem("accel_x"+segundo)){	
-					verificador_x++;
-				}
-				if (localStorage.getItem("accel_y"+primeiro) != localStorage.getItem("accel_y"+segundo)){	
-					verificador_y++;
-				}
-				if (localStorage.getItem("accel_z"+primeiro) != localStorage.getItem("accel_z"+segundo)){	
-					verificador_z++;
-				} */
 			}
-		document.getElementById('status').innerHTML += "<br>"+segundo;
+		
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
-		document.getElementById('status').innerHTML += "<br>______________________";
 		
 		result();
 	}
