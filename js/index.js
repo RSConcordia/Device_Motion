@@ -77,10 +77,10 @@ var app = {
 				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_x++;
 				}
-				if (ddp_x > '3' || ddp_x < '-3'){	
+				if (ddp_y > '3' || ddp_y < '-3'){	
 					verificador_y++;
 				}
-				if (ddp_x > '3' || ddp_x < '-3'){	
+				if (ddp_z > '3' || ddp_z < '-3'){	
 					verificador_z++;
 				}
 				if(ddp_c > '70' || ddp_c < '-70'){
