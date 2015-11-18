@@ -29,7 +29,7 @@ var app = {
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				document.getElementById('status').innerHTML += "<br><h2>Contador</h2> "+contador+"<br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
+				document.getElementById('status').innerHTML += "<br><h2>-"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 				
 				compass();
 			} 
@@ -83,7 +83,7 @@ var app = {
 				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_z++;
 				}
-				if(ddp_c > '70'){
+				if(ddp_c > '70' || ddp_c < '-70'){
 					verificador_c++;
 				}
 			}
