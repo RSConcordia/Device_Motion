@@ -24,7 +24,7 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(contador < 10 ){
+		if(contador < 5 ){
 				localStorage.setItem("accel_x"+contador, accel_x);
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
@@ -57,7 +57,7 @@ var app = {
 		alert('Compass error: ' + compassError.code);
 	}
 	function verificacao(){
-		for (primeiro = 0; primeiro < 9; primeiro++){
+		for (primeiro = 0; primeiro < 4; primeiro++){
 				var segundo = primeiro+1; 
 		
 			//--ddp -> diferença de posição
