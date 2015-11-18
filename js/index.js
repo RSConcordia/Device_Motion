@@ -31,7 +31,7 @@ var app = {
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				var string_eixo += "<br><h2>-#"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
+				string_eixo += "<br><h2>-#"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 				
 				compass();
 			} 
@@ -48,7 +48,7 @@ var app = {
 		var compass = parseInt(compass); 
 		
 		localStorage.setItem("compass"+contador, compass);
-		var string += string_eixo+"<br> Compass - "+compass+"<br><h2>-----§-----<h2>";
+		string += string_eixo+"<br> Compass - "+compass+"<br><h2>-----§-----<h2>";
 		contador++;
 		setTimeout(accelerometer, 1000);
 	}
