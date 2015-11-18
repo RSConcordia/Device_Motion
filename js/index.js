@@ -38,7 +38,7 @@ var app = {
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				string_eixo += "<br><h2>-"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
+				document.getElementById('status').innerHTML += "<br><h2>-"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 				
 				compass();
 			} 
@@ -55,8 +55,7 @@ var app = {
 		var compass = parseInt(compass); 
 		
 		localStorage.setItem("compass"+contador, compass);
-		string += string_eixo+"<br> Compass - "+compass+"<br><h2>-----§-----<h2>";
-		document.getElementById('status').innerHTML = contador+"...";
+		document.getElementById('status').innerHTML += string_eixo+"<br> Compass - "+compass+"<br><h2>-----§-----<h2>";
 		contador++;
 		setTimeout(accelerometer, 1000);
 	}
@@ -76,13 +75,6 @@ var app = {
 				var ddp_y = localStorage.getItem("accel_y"+primeiro) - localStorage.getItem("accel_y"+segundo);
 				var ddp_z = localStorage.getItem("accel_z"+primeiro) - localStorage.getItem("accel_z"+segundo);
 				var ddp_c = localStorage.getItem("compass"+primeiro) - localStorage.getItem("compass"+segundo);
-				
-			/*	document.getElementById('status').innerHTML += "<br>"+segundo;
-				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_x+" no eixo X";
-				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_y+" no eixo Y";
-				document.getElementById('status').innerHTML += "<br>Ddp  "+ddp_z+" no eixo Z";
-				document.getElementById('status').innerHTML += "<br>Ddp Compasso "+ddp_c+" no eixo Z";
-				document.getElementById('status').innerHTML += "<br>______________________"; */
 			
 				if (ddp_x > '4' || ddp_x < '-4'){	
 					verificador_x++;
@@ -98,26 +90,14 @@ var app = {
 				}
 			}
 		
-		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
+		document.getElementById('status').innerHTML = "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
 		document.getElementById('status').innerHTML += "<br>Compass teve "+verificador_c+" mudancas de 70º";
-		document.getElementById('status').innerHTML += "<br><button onclick='relatorio()'>Relatorio</button>";
 		
 	//	result();
 	}
 	function result(){
-	//	if (verificador_x > 2 && verificador_y > 2 || verificador_z > 2 && verificador_y > 2 || verificador_x > 2 && verificador_z > 2 ){
-			
-			
-		
-		contador = 0;	
-		verificador_x = 0;
-		verificador_y = 0;
-		verificador_z = 0;
-		verificador_c = 0
-	}
-	function relatorio(){
 			document.getElementById('relatorio').innerHTML += string;
 	}
 	
