@@ -11,6 +11,13 @@ var app = {
 	
 	function start(){
 		document.getElementById('status').innerHTML = "";
+		
+		contador = 0;	
+		verificador_x = 0;
+		verificador_y = 0;
+		verificador_z = 0;
+		verificador_c = 0
+		
 		accelerometer();
 	}	
 	function accelerometer(){ 
@@ -26,12 +33,12 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(contador < 5 ){
+		if(contador < 10 ){
 				localStorage.setItem("accel_x"+contador, accel_x);
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				string_eixo += "<br><h2>-#"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
+				string_eixo += "<br><h2>-"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 				
 				compass();
 			} 
@@ -49,6 +56,7 @@ var app = {
 		
 		localStorage.setItem("compass"+contador, compass);
 		string += string_eixo+"<br> Compass - "+compass+"<br><h2>-----§-----<h2>";
+		document.getElementById('status').innerHTML = contador+"...";
 		contador++;
 		setTimeout(accelerometer, 1000);
 	}
@@ -59,7 +67,7 @@ var app = {
 		alert('Compass error: ' + compassError.code);
 	}
 	function verificacao(){
-		for (primeiro = 0; primeiro < 4; primeiro++){
+		for (primeiro = 0; primeiro < 9; primeiro++){
 				var segundo = primeiro+1; 
 		
 			//--ddp -> diferença de posição
@@ -96,7 +104,7 @@ var app = {
 		document.getElementById('status').innerHTML += "<br>Compass teve "+verificador_c+" mudancas de 70º";
 		document.getElementById('status').innerHTML += "<br><button onclick='relatorio()'>Relatorio</button>";
 		
-		result();
+	//	result();
 	}
 	function result(){
 	//	if (verificador_x > 2 && verificador_y > 2 || verificador_z > 2 && verificador_y > 2 || verificador_x > 2 && verificador_z > 2 ){
