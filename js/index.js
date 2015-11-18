@@ -31,7 +31,6 @@ var app = {
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				document.getElementById('status').innerHTML 
 				var string_eixo += "<br><h2>-#"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 				
 				compass();
