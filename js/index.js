@@ -74,16 +74,16 @@ var app = {
 				document.getElementById('status').innerHTML += "<br>Ddp Compasso "+ddp_c+" no eixo Z";
 				document.getElementById('status').innerHTML += "<br>______________________"; */
 			
-				if (ddp_x > '3' || ddp_x < '-3'){	
+				if (ddp_x > '4' || ddp_x < '-4'){	
 					verificador_x++;
 				}
-				if (ddp_y > '3' || ddp_y < '-3'){	
+				if (ddp_y > '4' || ddp_y < '-4'){	
 					verificador_y++;
 				}
-				if (ddp_z > '3' || ddp_z < '-3'){	
+				if (ddp_z > '4' || ddp_z < '-4'){	
 					verificador_z++;
 				}
-				if(ddp_c > '70' || ddp_c < '-70'){
+				if(ddp_c > '65' || ddp_c < '-65'){
 					verificador_c++;
 				}
 			}
