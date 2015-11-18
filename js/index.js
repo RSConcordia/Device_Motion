@@ -46,7 +46,7 @@ var app = {
 		var compass = parseInt(compass); 
 		
 		localStorage.setItem("compass"+contador, compass);
-		document.getElementById('status').innerHTML += "<br> Compass - "+compass+"<br>-----§-----";
+		document.getElementById('status').innerHTML += "<br> Compass - "+compass+"<br><h2>-----§-----<h2>";
 		contador++;
 		setTimeout(accelerometer, 1000);
 	}
