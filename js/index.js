@@ -6,6 +6,8 @@ var app = {
 	var verificador_y = 0;
 	var verificador_z = 0;
 	var verificador_c = 0;
+	var string = 0;
+	var string_eixo = 0;
 	
 	function start(){
 		document.getElementById('status').innerHTML = "";
@@ -29,7 +31,8 @@ var app = {
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				document.getElementById('status').innerHTML += "<br><h2>-"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
+				document.getElementById('status').innerHTML 
+				var string_eixo += "<br><h2>-#"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 				
 				compass();
 			} 
@@ -46,7 +49,7 @@ var app = {
 		var compass = parseInt(compass); 
 		
 		localStorage.setItem("compass"+contador, compass);
-		document.getElementById('status').innerHTML += "<br> Compass - "+compass+"<br><h2>-----§-----<h2>";
+		var string += string_eixo+"<br> Compass - "+compass+"<br><h2>-----§-----<h2>";
 		contador++;
 		setTimeout(accelerometer, 1000);
 	}
@@ -92,6 +95,7 @@ var app = {
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
 		document.getElementById('status').innerHTML += "<br>Compass teve "+verificador_c+" mudancas de 70º";
+		document.getElementById('status').innerHTML += "<br><button onclick='relatorio()'>Relatorio</button>";
 		
 		result();
 	}
@@ -105,5 +109,8 @@ var app = {
 		verificador_y = 0;
 		verificador_z = 0;
 		verificador_c = 0
+	}
+	function relatorio(){
+			document.getElementById('relatorio').innerHTML += string;
 	}
 	
