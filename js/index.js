@@ -9,7 +9,8 @@ var app = {
 	var bloco = 1;
 	
 	function start(){
-	//document.getElementById('status').innerHTML = "";
+		document.getElementById('status').innerHTML = "";
+		document.getElementById('status').innerHTML += "<br><h2>"+bloco+"º Bloco<h2>";	
 		
 		contador = 0;	
 		verificador_x = 0;
@@ -37,9 +38,9 @@ var app = {
 				localStorage.setItem("accel_y"+contador, accel_y);
 				localStorage.setItem("accel_z"+contador, accel_z);
 				
-				document.getElementById('status').innerHTML += "<br><h2>"+bloco+"º Bloco<h2>";
 				document.getElementById('status').innerHTML += "<br><h2>-"+contador+"-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 				
+				contador++;
 				setTimeout(accelerometer, 800);
 			} 
 			else
@@ -104,7 +105,7 @@ var app = {
 		else 
 		{
 			bloco++;
-			start();
+			document.getElementById('status').innerHTML += "<button onclick='start()'>Again</button>";
 		}
 	}
 	
