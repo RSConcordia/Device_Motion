@@ -75,13 +75,13 @@ var app = {
 				var ddp_z = localStorage.getItem("accel_z"+primeiro) - localStorage.getItem("accel_z"+segundo);
 				var ddp_c = localStorage.getItem("compass"+primeiro) - localStorage.getItem("compass"+segundo);
 			
-				if (ddp_x > '4' || ddp_x < '-4'){	
+				if (ddp_x > '3' || ddp_x < '-3'){	
 					verificador_x++;
 				}
-				if (ddp_y > '4' || ddp_y < '-4'){	
+				if (ddp_y > '3' || ddp_y < '-3'){	
 					verificador_y++;
 				}
-				if (ddp_z > '4' || ddp_z < '-4'){	
+				if (ddp_z > '3' || ddp_z < '-3'){	
 					verificador_z++;
 				}
 				if(ddp_c > '70' || ddp_c < '-70'){
@@ -99,13 +99,12 @@ var app = {
 		result();
 	}
 	function result(){
-		if (verificador_x > 2 && verificador_y > 2 && verificador_z > 2 && verificador_c > 2){
+		if (verificador_x > 2 && verificador_y > 2 && verificador_z > 2 && verificador_c > 1){
 			document.getElementById('status').innerHTML += "<br><h2>"+bloco+"º Bloco ocorreu uma mudança intensa.<h2>";
-			
-			start();
 		}
 		else 
 		{
+			bloco++;
 			start();
 		}
 	}
