@@ -90,7 +90,7 @@ var app = {
 			//	}
 			}
 		
-		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_x+" mudancas no eixo X";
+		document.getElementById('status').innerHTML += "<br><br>Ocorreram "+verificador_x+" mudancas no eixo X";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_y+" mudancas no eixo Y";
 		document.getElementById('status').innerHTML += "<br>Ocorreram "+verificador_z+" mudancas no eixo Z";
 		//document.getElementById('status').innerHTML += "<br>Compass teve "+verificador_c+" mudancas de 70º";
