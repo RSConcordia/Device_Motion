@@ -99,7 +99,7 @@ var app = {
 		result();
 	}
 	function result(){
-		if (verificador_x > 2 && verificador_y > 2 && verificador_z > 2 && verificador_c > 1){
+		if (verificador_x > 1 && verificador_y > 1 && verificador_z > 1 && verificador_c > 1){
 			document.getElementById('status').innerHTML += "<br><h2>"+bloco+"º Bloco ocorreu uma mudança intensa.<h2>";
 		}
 		else 
