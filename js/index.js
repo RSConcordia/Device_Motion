@@ -32,7 +32,7 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(contador == 0){
+		if(contador < 1){
 				localStorage.setItem("x", accel_x);
 				localStorage.setItem("y", accel_y);
 				localStorage.setItem("z", accel_z);
@@ -41,13 +41,13 @@ var app = {
 				contador++;
 				accelerometer();
 		} 
-		else if (contador == 1){
+		if (contador < 2 && contador > 0){
 			localStorage.setItem("accel_x"+contador, accel_x);
 			localStorage.setItem("accel_y"+contador, accel_y);
 			localStorage.setItem("accel_z"+contador, accel_z);
 			verificacao();
 		}
-		else if(contador > 1 && contador < 7){
+		if(contador > 1 && contador < 7){
 			localStorage.setItem("accel_x"+contador, accel_x);
 			localStorage.setItem("accel_y"+contador, accel_y);
 			localStorage.setItem("accel_z"+contador, accel_z);
@@ -57,8 +57,7 @@ var app = {
 			contador++;
 			setTimeout(accelerometer, 800);
 		}
-		else
-		{
+		if(contador > 6){
 			movimento();
 		}
 	}
