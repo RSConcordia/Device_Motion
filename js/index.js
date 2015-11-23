@@ -60,7 +60,7 @@ var app = {
 				document.getElementById("status").innerHTML += "<br>Vetor "+ vetor;				
 				document.getElementById("status").innerHTML += "<br>";				
 					
-				if(anterior == false){
+				if(!anterior){
 					if(vetor > 0){
 						contador++;
 						anterior = true;					
