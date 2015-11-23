@@ -45,6 +45,9 @@ var app = {
 	function error(){
 		alert('Error!');
 	}
+	function onError(compassError) {
+		alert('Compass error: ' + compassError.code);
+	};
 	function compass(){
 		navigator.compass.getCurrentHeading(onSuccess, onError);	
 	}	
