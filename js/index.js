@@ -6,9 +6,7 @@ var app = {
 	var soma_media = 0;
 	var anterior = false;
 	
-	function start(){
-		document.getElementById('status').innerHTML = "";
-		
+	function start(){ 
 		loop = 0;	
 		soma_media = 0;
 		accelerometer();
@@ -61,5 +59,6 @@ var app = {
 				}
 		}
 		frequencia = contador / 50;
+		document.getElementById("status").innerHTML = "Frequência - "+ frequencia;
 	}
 	
