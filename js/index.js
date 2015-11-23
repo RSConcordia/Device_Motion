@@ -34,7 +34,7 @@ var app = {
 			
 			document.getElementById("status").innerHTML += "<br><h2> "+ loop+"</h2>";
 			document.getElementById("status").innerHTML += "<br>soma eixo "+ soma_eixo;
-			document.getElementById("status").innerHTML += "<br>soma media "+ soma_eixo;
+			document.getElementById("status").innerHTML += "<br>soma media "+ soma_media;
 			document.getElementById("status").innerHTML += "<br><h2>---§---</h2>";
 			
 			loop++;
@@ -52,8 +52,14 @@ var app = {
 		var media = soma_media / 5;
 		
 		for (i = 0; i < 10; i++){				
-				var vetor = localStorage.getItem("soma_eixo_"+i) - media;				
+				var eixo = localStorage.getItem("soma_eixo_"+i);
+				var vetor = eixo - media;	
 				
+				document.getElementById("status").innerHTML += "<br>i - "+ i;				
+				document.getElementById("status").innerHTML += "<br>Media - "+ media;				
+				document.getElementById("status").innerHTML += "<br>Eixo - "+ eixo;				
+				document.getElementById("status").innerHTML += "<br>Vetor - "+ vetor;				
+					
 				if(anterior == false){
 					if(vetor > 0){
 						contador++;
@@ -66,7 +72,7 @@ var app = {
 				}
 		}
 		frequencia = contador / 10;
-		document.getElementById("status").innerHTML += "contador - "+ contador;
-		document.getElementById("status").innerHTML += "Frequência - "+ frequencia;
+		document.getElementById("status").innerHTML += "Contador "+ contador;
+		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
 	}
 	
