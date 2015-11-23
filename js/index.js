@@ -7,7 +7,9 @@ var app = {
 	var anterior = false;
 	
 	function start(){ 
+		document.getElementById("status").innerHTML = "";
 		loop = 0;	
+		contador = 0;
 		soma_media = 0;
 		accelerometer();
 	}	
@@ -24,12 +26,17 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(loop < 50){			
+		if(loop < 10){			
 			var soma_eixo = accel_x + accel_y + accel_z;
 			soma_media = soma_media + soma_eixo;
 			
 			localStorage.setItem("soma_eixo_"+loop, soma_eixo);
-	
+			
+			document.getElementById("status").innerHTML += "<br><h2> "+ loop+"</h2>";
+			document.getElementById("status").innerHTML += "<br>soma eixo "+ soma_eixo;
+			document.getElementById("status").innerHTML += "<br>soma media "+ soma_eixo;
+			document.getElementById("status").innerHTML += "<br><h2>---§---</h2>";
+			
 			loop++;
 			setTimeout(accelerometer, 100);	
 		}
@@ -42,9 +49,9 @@ var app = {
 		alert('Error!');
 	}
 	function vetor(){
-		var media = soma_media / 50;
+		var media = soma_media / 5;
 		
-		for (i = 0; i < 50; i++){				
+		for (i = 0; i < 10; i++){				
 				var vetor = localStorage.getItem("soma_eixo_"+i) - media;				
 				
 				if(anterior == false){
@@ -58,7 +65,8 @@ var app = {
 					}
 				}
 		}
-		frequencia = contador / 50;
-		document.getElementById("status").innerHTML = "Frequência - "+ frequencia;
+		frequencia = contador / 10;
+		document.getElementById("status").innerHTML += "contador - "+ contador;
+		document.getElementById("status").innerHTML += "Frequência - "+ frequencia;
 	}
 	
