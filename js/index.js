@@ -5,7 +5,6 @@ var app = {
 	var verificador_x = 0;
 	var verificador_y = 0;
 	var verificador_z = 0;
-	var seg = 0;
 	
 	function start(){
 		document.getElementById('status').innerHTML = "";
@@ -31,12 +30,11 @@ var app = {
 		var accel_z = parseInt(accel_z); 
 		
 		if(contador < 50){
-			localStorage.setItem("accel_x", accel_x);
+		/*	localStorage.setItem("accel_x", accel_x);
 			localStorage.setItem("accel_y", accel_y);
-			localStorage.setItem("accel_z", accel_z);
+			localStorage.setItem("accel_z", accel_z); */
 			
-			document.getElementById('status').innerHTML += "<br><h2>-Cache-</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
-			
+			document.getElementById('status').innerHTML += "<br><h2>"+contador+"</h2><br>X - "+accel_x+"<br>Y - "+accel_y+"<br>Z - "+accel_z;
 			compass();
 		}
 		else
@@ -50,11 +48,11 @@ var app = {
 	function compass(){
 		navigator.compass.getCurrentHeading(onSuccess, onError);	
 	}	
-	function onSuccess(){
+	function onSuccess(heading){
 		var compass = heading.magneticHeading;
 		var compass = parseInt(compass);
 	
-		document.getElementById('status').innerHTML += "<br> "+contador+" - "+compass;
+		document.getElementById('status').innerHTML += "<br> compass - "+compass;
 		contador++;
 		setTimeout(accelerometer, 100);	
 	}
