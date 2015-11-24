@@ -61,7 +61,7 @@ var app = {
 			document.getElementById("status").innerHTML += "<br>";				
 				
 			if(!anterior){
-				if(vetor > 0){
+				if(vetor >= 1){
 					contador++;
 					anterior = true;					
 				}
