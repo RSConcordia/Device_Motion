@@ -34,7 +34,7 @@ var app = {
 			
 			localStorage.setItem("soma_eixo_"+loop, soma_eixo);
 			
-			document.getElementById("status").innerHTML += "<br><h2> "+ loop+"</h2>";
+			document.getElementById("status").innerHTML = "<br><h2> "+ loop+"</h2>";
 		//	document.getElementById("status").innerHTML += "<br>soma eixo "+ soma_eixo;
 		//	document.getElementById("status").innerHTML += "<br>soma media "+ soma_media;
 			document.getElementById("status").innerHTML += "<br><h2>---§---</h2>";
@@ -82,7 +82,7 @@ var app = {
 		} 
 		
 		frequencia = ( contador_n + contador_p ) / 50;
-		document.getElementById("status").innerHTML += "<br><h2>Result</h2>";
+		document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador Positivo "+ contador_p;
 		document.getElementById("status").innerHTML += "<br>Contador Negativo "+ contador_n;
 		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
