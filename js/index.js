@@ -52,25 +52,26 @@ var app = {
 		var media = soma_media / 10;
 		document.getElementById("status").innerHTML += "<br>Media "+ media;	
 		for (i = 0; i < 10; i++){				
-				var eixo = localStorage.getItem("soma_eixo_"+i);
-				var vetor = eixo - media;	
+			var eixo = localStorage.getItem("soma_eixo_"+i);
+			var vetor = eixo - media;	
+			
+			document.getElementById("status").innerHTML += "<br><h2>i "+ i+"</h2>";								
+			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo;				
+			document.getElementById("status").innerHTML += "<br>Vetor "+ vetor;				
+			document.getElementById("status").innerHTML += "<br>";				
 				
-				document.getElementById("status").innerHTML += "<br><h2>i "+ i+"</h2>";								
-				document.getElementById("status").innerHTML += "<br>Eixo "+ eixo;				
-				document.getElementById("status").innerHTML += "<br>Vetor "+ vetor;				
-				document.getElementById("status").innerHTML += "<br>";				
-					
-				if(!anterior){
-					if(vetor > 0){
-						contador++;
-						anterior = true;					
-					}
-					else 
-					{
-						anterior = false;
-					}
+			if(!anterior){
+				if(vetor > 0){
+					contador++;
+					anterior = true;					
 				}
+			}
+			else 
+			{
+				anterior = false;
+			}
 		}
+		
 		frequencia = contador / 10;
 		document.getElementById("status").innerHTML += "<br><h2>Resultado</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
