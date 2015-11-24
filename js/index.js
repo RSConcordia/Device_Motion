@@ -32,9 +32,9 @@ var app = {
 			
 			localStorage.setItem("soma_eixo_"+loop, soma_eixo);
 			
-			document.getElementById("status").innerHTML = "<br><h2> "+ loop+"</h2>";
-	//		document.getElementById("status").innerHTML += "<br>soma eixo "+ soma_eixo;
-	//		document.getElementById("status").innerHTML += "<br>soma media "+ soma_media;
+			document.getElementById("status").innerHTML += "<br><h2> "+ loop+"</h2>";
+			document.getElementById("status").innerHTML += "<br>soma eixo "+ soma_eixo;
+			document.getElementById("status").innerHTML += "<br>soma media "+ soma_media;
 			document.getElementById("status").innerHTML += "<br><h2>---§---</h2>";
 			
 			loop++;
@@ -55,10 +55,10 @@ var app = {
 			var eixo = localStorage.getItem("soma_eixo_"+i);
 			var vetor = eixo - media;	
 			
-		//	document.getElementById("status").innerHTML += "<br><h2>i "+ i+"</h2>";								
-		//	document.getElementById("status").innerHTML += "<br>Eixo "+ eixo;				
-		//	document.getElementById("status").innerHTML += "<br>Vetor "+ vetor;				
-		//	document.getElementById("status").innerHTML += "<br>";				
+			document.getElementById("status").innerHTML += "<br><h2>---"+ i+"---</h2>";								
+			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo;				
+			document.getElementById("status").innerHTML += "<br>Vetor "+ vetor;				
+			document.getElementById("status").innerHTML += "<br>";				
 				
 			if(!anterior){
 				if(vetor > 0){
@@ -73,7 +73,7 @@ var app = {
 		}
 		
 		frequencia = contador / 50;
-		document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
+		document.getElementById("status").innerHTML += "<br><h2>Result</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
 		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
 	}
