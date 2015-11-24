@@ -2,16 +2,14 @@ var app = {
 	
 	};
 	var loop = 0;	
-	var contador_n = 0;
-	var contador_p = 0;
+	var contador = 0;
 	var soma_media = 0;
 	var anterior = false;
 	
 	function start(){ 
 		document.getElementById("status").innerHTML = "";
 		loop = 0;	
-		contador_p = 0;
-		contador_n = 0;
+		contador = 0;
 		soma_media = 0;
 		accelerometer();
 	}	
@@ -61,30 +59,26 @@ var app = {
 		//	document.getElementById("status").innerHTML += "<br>Eixo "+ eixo;				
 		//	document.getElementById("status").innerHTML += "<br>Vetor "+ vetor;				
 		//	document.getElementById("status").innerHTML += "<br>";				
-				  
-			if(vetor >= '1'){
-					contador_p++;					
-			}
-			if(vetor >= '-1'){
-					contador_n++;					
-			}
 		
-		/*	if(!anterior){
+			if(!anterior){
 				if(vetor >= 1){
 					contador++;
 					anterior = true;					
+				}
+				else
+				{
+					anterior = false;
 				}
 			}
 			else 
 			{
 				anterior = false;
-			}  */
+			}  
 		} 
 		
-		frequencia = ( contador_n + contador_p ) / 50;
+		frequencia = contador / 5;
 		document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
-		document.getElementById("status").innerHTML += "<br>Contador Positivo "+ contador_p;
-		document.getElementById("status").innerHTML += "<br>Contador Negativo "+ contador_n;
+		document.getElementById("status").innerHTML += "<br>Contador Positivo "+ contador;
 		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
 	}
 	
