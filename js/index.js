@@ -52,7 +52,7 @@ var app = {
 	}
 	function vetor(){
 		var media = soma_media / 10;
-		document.getElementById("status").innerHTML += "<br>Media "+ media;	
+	//	document.getElementById("status").innerHTML += "<br>Media "+ media;	
 		for (i = 0; i < 10; i++){				
 			var eixo = localStorage.getItem("soma_eixo_"+i);
 			var vetor = eixo - media;	
@@ -79,7 +79,7 @@ var app = {
 		} 
 		
 		frequencia = contador / 10;
-		hz = 1 / frequencia;
+		
 		document.getElementById("status").innerHTML += "<br><h2>Result</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
 		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
