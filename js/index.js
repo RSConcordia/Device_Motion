@@ -5,9 +5,11 @@ var app = {
 	var contador = 0;
 	var soma_media = 0;
 	var anterior = false;
+	var teste = 0;
+	
 	
 	function start(){ 
-		document.getElementById("status").innerHTML = "";
+	//	document.getElementById("status").innerHTML = "";
 		loop = 0;	
 		contador = 0;
 		soma_media = 0;
@@ -26,16 +28,16 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(loop < 50){			
+		if(loop < 10){			
 			var soma_eixo = accel_x + accel_y + accel_z;
 			soma_media = soma_media + soma_eixo;
 			
 			localStorage.setItem("soma_eixo_"+loop, soma_eixo);
 			
-			document.getElementById("status").innerHTML = "<br><h2> "+ loop+"</h2>";
+		//	document.getElementById("status").innerHTML = "<br><h2> "+ loop+"</h2>";
 		//	document.getElementById("status").innerHTML += "<br>soma eixo "+ soma_eixo;
 		//	document.getElementById("status").innerHTML += "<br>soma media "+ soma_media;
-			document.getElementById("status").innerHTML += "<br><h2>---§---</h2>";
+		//	document.getElementById("status").innerHTML += "<br><h2>---§---</h2>";
 			
 			loop++;
 			setTimeout(accelerometer, 100);	
@@ -49,9 +51,9 @@ var app = {
 		alert('Error!');
 	}
 	function vetor(){
-		var media = soma_media / 50;
+		var media = soma_media / 10;
 		document.getElementById("status").innerHTML += "<br>Media "+ media;	
-		for (i = 0; i < 50; i++){				
+		for (i = 0; i < 10; i++){				
 			var eixo = localStorage.getItem("soma_eixo_"+i);
 			var vetor = eixo - media;	
 			
@@ -77,8 +79,15 @@ var app = {
 		} 
 		
 		frequencia = contador / 10;
-		document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
+		hz = 1 / frequencia;
+		document.getElementById("status").innerHTML += "<br><h2>Result</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
 		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
+		
+		if(teste < 5){
+			teste++;
+			start();
+		}
+		
 	}
 	
