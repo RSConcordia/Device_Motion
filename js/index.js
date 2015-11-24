@@ -5,7 +5,7 @@ var app = {
 	var contador = 0;
 	var soma_media = 0;
 	var anterior = false;
-	var teste = 0;
+	var teste = 1;
 	
 	
 	function start(){ 
@@ -84,7 +84,7 @@ var app = {
 		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
 		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
 		
-		if(teste < 5){
+		if(teste <= 5){
 			teste++;
 			start();
 		}
