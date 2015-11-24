@@ -81,7 +81,7 @@ var app = {
 			}
 		} */
 		
-		frequencia = contador / 50;
+		frequencia = ( contador_n + contador_p ) / 50;
 		document.getElementById("status").innerHTML += "<br><h2>Result</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador Positivo "+ contador_p;
 		document.getElementById("status").innerHTML += "<br>Contador Negativo "+ contador_n;
