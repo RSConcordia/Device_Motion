@@ -76,7 +76,7 @@ var app = {
 			}  
 		} 
 		
-		frequencia = (contador / 5);
+		frequencia = contador / 10;
 		document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
 		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
