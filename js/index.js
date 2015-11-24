@@ -26,7 +26,7 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(loop < 10){			
+		if(loop < 50){			
 			var soma_eixo = accel_x + accel_y + accel_z;
 			soma_media = soma_media + soma_eixo;
 			
@@ -49,9 +49,9 @@ var app = {
 		alert('Error!');
 	}
 	function vetor(){
-		var media = soma_media / 10;
+		var media = soma_media / 50;
 		document.getElementById("status").innerHTML += "<br>Media "+ media;	
-		for (i = 0; i < 10; i++){				
+		for (i = 0; i < 50; i++){				
 			var eixo = localStorage.getItem("soma_eixo_"+i);
 			var vetor = eixo - media;	
 			
@@ -72,7 +72,7 @@ var app = {
 			}
 		}
 		
-		frequencia = contador / 10;
+		frequencia = contador / 50;
 		document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
 		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
