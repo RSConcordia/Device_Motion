@@ -6,6 +6,8 @@ var app = {
 	var soma_media = 0;
 	var anterior = false;
 	var teste = 0;
+	var point = 5;
+	var frequencia = 0;
 	
 	
 	function start(){ 
@@ -13,6 +15,7 @@ var app = {
 		loop = 0;	
 		contador = 0;
 		soma_media = 0;
+		frequencia = 0;
 		accelerometer();
 	}	
 	function accelerometer(){ 
@@ -78,15 +81,23 @@ var app = {
 			}  
 		} 
 		
-		frequencia = contador / 10;
+		freq = contador / 10;
 		
-		document.getElementById("status").innerHTML += "<br><h2>Result</h2>";
+		frequencia = frequencia + freq;
+		
+	/*	document.getElementById("status").innerHTML += "<br><h2>Result</h2>";
 		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
-		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
+		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia; */
 		
-		if(teste < 4){
+		if(teste < 4){		
+			document.getElementById("status").innerHTML = "<br><h2>"+point+"</h2>";
+			point = point - 1;		
 			teste++;
 			start();
+		}else
+		{
+			document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
+			document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
 		}
 		
 	}
