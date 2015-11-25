@@ -20,13 +20,6 @@ var app = {
 		teste = 0;
 		anterior = false;
 		accelerometer();
-	}	
-	function load(){ 
-	//	document.getElementById("status").innerHTML = "";
-		loop = 0;	
-		contador = 0;
-		soma_media = 0;
-		accelerometer();
 	}		
 	function accelerometer(){ 
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
@@ -41,16 +34,11 @@ var app = {
 		var accel_z = acceleration.z;
 		var accel_z = parseInt(accel_z); 
 		
-		if(loop < 10){			
+		if(loop < 50){			
 			var soma_eixo = accel_x + accel_y + accel_z;
 			soma_media = soma_media + soma_eixo;
 			
 			localStorage.setItem("soma_eixo_"+loop, soma_eixo);
-			
-		//	document.getElementById("status").innerHTML = "<br><h2> "+ loop+"</h2>";
-		//	document.getElementById("status").innerHTML += "<br>soma eixo "+ soma_eixo;
-		//	document.getElementById("status").innerHTML += "<br>soma media "+ soma_media;
-		//	document.getElementById("status").innerHTML += "<br><h2>---§---</h2>";
 			
 			loop++;
 			setTimeout(accelerometer, 100);	
@@ -64,16 +52,10 @@ var app = {
 		alert('Error!');
 	}
 	function vetor(){
-		var media = soma_media / 10;
-	//	document.getElementById("status").innerHTML += "<br>Media "+ media;	
-		for (i = 0; i < 10; i++){				
+		var media = soma_media / 50;
+		for (i = 0; i < 50; i++){				
 			var eixo = localStorage.getItem("soma_eixo_"+i);
-			var vetor = eixo - media;	
-			
-		//	document.getElementById("status").innerHTML += "<br><h2>---"+ i+"---</h2>";								
-		//	document.getElementById("status").innerHTML += "<br>Eixo "+ eixo;				
-		//	document.getElementById("status").innerHTML += "<br>Vetor "+ vetor;				
-		//	document.getElementById("status").innerHTML += "<br>";				
+			var vetor = eixo - media;		
 		
 			if(!anterior){
 				if(vetor >= 1){
@@ -91,24 +73,7 @@ var app = {
 			}  
 		} 
 		
-		freq = contador / 10;
+		frequencia = contador / 10;
 		
-		frequencia = frequencia + freq;
-		
-	/*	document.getElementById("status").innerHTML += "<br><h2>Result</h2>";
-		document.getElementById("status").innerHTML += "<br>Contador "+ contador;
-		document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia; */
-		
-		if(teste < 4){		
-			document.getElementById("status").innerHTML = "<br><h2>"+point+"</h2>";
-			point = point - 1;		
-			teste++;
-			load();
-		}else
-		{
-			document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
-			document.getElementById("status").innerHTML += "<br>Frequência "+ frequencia;
-		}
-		
+		document.getElementById("status").innerHTML += "<br><h2>Result</h2><br>Frequência "+ frequencia; 		
 	}
-	
