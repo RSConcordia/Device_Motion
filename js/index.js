@@ -11,13 +11,23 @@ var app = {
 	
 	
 	function start(){ 
-	//	document.getElementById("status").innerHTML = "";
+		document.getElementById("status").innerHTML = "";
 		loop = 0;	
 		contador = 0;
 		soma_media = 0;
 		frequencia = 0;
+		point = 5;
+		teste = 0;
+		anterior = false;
 		accelerometer();
 	}	
+	function load(){ 
+	//	document.getElementById("status").innerHTML = "";
+		loop = 0;	
+		contador = 0;
+		soma_media = 0;
+		accelerometer();
+	}		
 	function accelerometer(){ 
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
 	}
@@ -93,7 +103,7 @@ var app = {
 			document.getElementById("status").innerHTML = "<br><h2>"+point+"</h2>";
 			point = point - 1;		
 			teste++;
-			start();
+			load();
 		}else
 		{
 			document.getElementById("status").innerHTML = "<br><h2>Result</h2>";
