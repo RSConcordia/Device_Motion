@@ -5,20 +5,18 @@ var app = {
 	var contador = 0;
 	var soma_media = 0;
 	var anterior = false;
-	var teste = 0;
-	var point = 5;
 	var frequencia = 0;
 	
 	
 	function start(){ 
 		document.getElementById("status").innerHTML = "";
+		
 		loop = 0;	
 		contador = 0;
 		soma_media = 0;
 		frequencia = 0;
-		point = 5;
-		teste = 0;
 		anterior = false;
+		
 		accelerometer();
 	}		
 	function accelerometer(){ 
@@ -58,7 +56,7 @@ var app = {
 			var vetor = eixo - media;		
 		
 			if(!anterior){
-				if(vetor >= 1){
+				if(vetor > 0){
 					contador++;
 					anterior = true;					
 				}
@@ -69,11 +67,11 @@ var app = {
 			}
 			else 
 			{
-				anterior = false;
+				if(vetor < 0) { anterior = false; }
 			}  
 		} 
 		
-		frequencia = contador / 10;
+		frequencia = contador / 5;
 		
 		document.getElementById("status").innerHTML += "<br><h2>Result</h2><br>Frequência "+ frequencia; 		
 	}
