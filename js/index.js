@@ -59,7 +59,8 @@ var app = {
 			var eixo = localStorage.getItem("soma_eixo_"+i);
 			var vetor = eixo - media;
 			var vetor = parseInt(vetor);
-		
+			document.getElementById("status").innerHTML += "/"+ vetor; 
+			
 			if(!anterior){
 				if(vetor > "0"){
 					contador++;
