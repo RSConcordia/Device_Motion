@@ -44,6 +44,7 @@ var app = {
 		}
 		else
 		{			
+			document.getElementById("status").innerHTML += "<br><h2>---§----</h2><br>"; 
 			document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 			vetor();
 		}
@@ -54,7 +55,7 @@ var app = {
 	function vetor(){
 		var media = soma_eixo / 50;
 		var media = parseInt(media);
-		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media; 
+		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		for (i = 0; i < 50; i++){				
 			var eixo = localStorage.getItem("soma_eixo_"+i);
 			var vetor = eixo - media;
