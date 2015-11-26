@@ -5,6 +5,7 @@ var app = {
 	var contador = 0;
 	var soma_eixo = 0;
 	var eixo = [""];
+	var vetor = [""];
 	var anterior = false;
 	
 	
@@ -13,7 +14,9 @@ var app = {
 		
 		loop = 0;	
 		contador = 0;
-		soma_media = 0;
+		soma_eixo = 0;
+		eixo = [""];
+		vetor = [""];
 		anterior = false;
 		
 		accelerometer();
@@ -56,7 +59,7 @@ var app = {
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		for (i = 0; i < 50; i++){	
 			var vetor = eixo[i] - media;
-			var vetor = parseInt(vetor);
+			var vetor += parseInt(vetor);
 			
 			document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 			document.getElementById("status").innerHTML += "/"+ vetor; 
