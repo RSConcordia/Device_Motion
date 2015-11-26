@@ -10,11 +10,13 @@ var app = {
 	
 	
 	function start(){ 
-		document.getElementById("status").innerHTML = "xx";
+		document.getElementById("status").innerHTML = "";
 		
 		loop = 0;	
 		contador = 0;
 		soma_eixo = 0;
+		eixo = [""];
+		vetor = [""];
 		anterior = false;
 		
 		accelerometer();
@@ -79,7 +81,6 @@ var app = {
 				}
 			}  
 		} 
-		
 		frequencia = contador / 5;
 		
 		document.getElementById("status").innerHTML += "<br><h2>Result</h2><br>Frequência "+ frequencia; 		
