@@ -10,19 +10,20 @@ var app = {
 	
 	
 	function start(){ 
-		document.getElementById("status").innerHTML = "";
+		document.getElementById("status").innerHTML = "xx";
 		
 		loop = 0;	
 		contador = 0;
 		soma_eixo = 0;
-		eixo = [""];
-		vetor = [""];
 		anterior = false;
 		
 		accelerometer();
 	}		
 	function accelerometer(){ 
 		navigator.accelerometer.getCurrentAcceleration(motion, error);
+	}
+	function error(){
+		alert('Error!');
 	}
 	function motion(acceleration){
 		var accel_x = acceleration.x;
@@ -36,7 +37,7 @@ var app = {
 		
 		if(loop < 50){			
 			document.getElementById("status").innerHTML += "<br><h2>"+loop+"</h2>"; 		
-			var eixo += accel_x + accel_y + accel_z;
+			eixo += accel_x + accel_y + accel_z;
 			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo[loop]; 		
 			soma_eixo = soma_eixo + eixo[loop];
 			
@@ -50,19 +51,16 @@ var app = {
 			vetor();
 		}
 	}
-	function error(){
-		alert('Error!');
-	}
 	function vetor(){
 		var media = soma_eixo / 50;
 		var media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		for (i = 0; i < 50; i++){	
-			var vetor = eixo[i] - media;
-			var vetor += parseInt(vetor);
+			v = eixo[i] - media;
+			vetor += parseInt(v);
 			
 			document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
-			document.getElementById("status").innerHTML += "/"+ vetor; 
+			document.getElementById("status").innerHTML += "/"+ vetor[i]; 
 			
 			if(!anterior){
 				if(vetor > "0"){
@@ -85,4 +83,4 @@ var app = {
 		frequencia = contador / 5;
 		
 		document.getElementById("status").innerHTML += "<br><h2>Result</h2><br>Frequência "+ frequencia; 		
-	}
+	} 
