@@ -4,7 +4,7 @@ var app = {
 	var loop = 0;	
 	var contador = 0;
 	var soma_eixo = 0;
-	var eixo = 0;
+	var eixo = [""];
 	var anterior = false;
 	
 	
@@ -33,11 +33,9 @@ var app = {
 		
 		if(loop < 50){			
 			document.getElementById("status").innerHTML += "<br><h2>"+loop+"</h2>"; 		
-			var eixo = accel_x + accel_y + accel_z;
-			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
-			soma_eixo = soma_eixo + eixo;
-				
-			localStorage.setItem("soma_eixo_"+loop, eixo);
+			var eixo += accel_x + accel_y + accel_z;
+			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo[loop]; 		
+			soma_eixo = soma_eixo + eixo[loop];
 			
 			loop++;
 			setTimeout(accelerometer, 100);	
@@ -56,10 +54,11 @@ var app = {
 		var media = soma_eixo / 50;
 		var media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
-		for (i = 0; i < 50; i++){				
-			var eixo = localStorage.getItem("soma_eixo_"+i);
-			var vetor = eixo - media;
+		for (i = 0; i < 50; i++){	
+			var vetor = eixo[i] - media;
 			var vetor = parseInt(vetor);
+			
+			document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 			document.getElementById("status").innerHTML += "/"+ vetor; 
 			
 			if(!anterior){
