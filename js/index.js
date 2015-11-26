@@ -60,16 +60,13 @@ var app = {
 		}
 		else
 		{			
-			vetor();
-		}
-	}
-	function vetor(){
 		document.getElementById("status").innerHTML += "<br><h2>---§----</h2><br>"; 
 		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
 		var media = soma_eixo / 50;
 		media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
+		
 		for (i = 0; i < 50; i++){	
 			var eixo = localStorage.getItem("eixo");
 			v = eixo - media;
@@ -97,5 +94,6 @@ var app = {
 		} 
 		frequencia = contador / 5;
 		
-		document.getElementById("status").innerHTML += "<br><h2>Result</h2><br>Frequência "+ frequencia; 		
-	} 
+		document.getElementById("status").innerHTML += "<br><h2>Result</h2><br>Frequência "+ frequencia; 	
+		}
+	}
