@@ -4,6 +4,7 @@ var app = {
 	var loop = 0;	
 	var contador = 0;
 	var soma_eixo = 0;
+	var media = 0;
 	var eixo = [""];
 	var vetor = [""];
 	var anterior = false;
@@ -15,6 +16,7 @@ var app = {
 		loop = 0;	
 		contador = 0;
 		soma_eixo = 0;
+		media = 0;
 		eixo = [""];
 		vetor = [""];
 		anterior = false;
@@ -48,14 +50,14 @@ var app = {
 		}
 		else
 		{			
-			document.getElementById("status").innerHTML += "<br><h2>---§----</h2><br>"; 
+			document.getElementById("status").innerHTML += "<br><h2>---§"+eixo[7]+"----</h2><br>"; 
 			document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 			vetor();
 		}
 	}
 	function vetor(){
 		var media = soma_eixo / 50;
-		var media = parseInt(media);
+		media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		for (i = 0; i < 50; i++){	
 			v = eixo[i] - media;
