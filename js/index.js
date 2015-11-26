@@ -63,7 +63,7 @@ var app = {
 		document.getElementById("status").innerHTML += "<br><h2>---§----</h2><br>"; 
 		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
-		var media = soma_eixo / 50;
+		media = soma_eixo / 50;
 		media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		
