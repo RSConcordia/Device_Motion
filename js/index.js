@@ -65,14 +65,14 @@ var app = {
 		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
 		media = soma_eixo / 50;
-	//	media = parseInt(media);
+		media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
 		for (i = 0; i < 50; i++){	
 			var eixo = localStorage.getItem("eixo"+i);
-			vetor = eixo - media;
-			//vetor = parseInt(v);
+			v = eixo - media;
+			vetor = parseInt(v);
 			
 			document.getElementById("status").innerHTML +=  vetor+"/"; 
 			
