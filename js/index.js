@@ -35,15 +35,15 @@ var app = {
 	}
 	function motion(acceleration){
 		var x = acceleration.x;
-		var x_int = parseInt(x);
+		var x_int = round(x);
 		var accel_x = Math.pow(x_int, 2);
 		
 		var y = acceleration.y;
-		var y_int = parseInt(y);
+		var y_int = round(y);
 		var accel_y = Math.pow(y_int, 2);
 		
 		var z = acceleration.z;
-		var z_int = parseInt(z);
+		var z_int = round(z);
 		var accel_z = Math.pow(z_int, 2);
 		
 		if(loop < 50){			
@@ -51,7 +51,7 @@ var app = {
 	
 			eixo = accel_x + accel_y + accel_z;
 			eixo = Math.sqrt(eixo);
-			eixo = parseInt(eixo);
+			eixo = round(eixo);
 			localStorage.setItem("eixo"+loop, eixo);
 			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
 			document.getElementById("status").innerHTML += "<br>x "+ accel_x; 		
@@ -69,14 +69,14 @@ var app = {
 		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
 		media = soma_eixo / 50;
-		media = parseInt(media);
+		media = round(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
 		for (i = 0; i < 50; i++){	
 			var eixo = localStorage.getItem("eixo"+i);
 			vetor = eixo - media;
-			vetor = parseInt(vetor);
+			vetor = round(vetor);
 			
 			document.getElementById("status").innerHTML +=  vetor+"/"; 
 			
