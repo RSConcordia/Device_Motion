@@ -45,11 +45,11 @@ var app = {
 		
 		if(loop < 50){			
 			document.getElementById("status").innerHTML = "<br><h2>"+loop+"</h2>"; 		
-			//eixo += accel_x + accel_y + accel_z;
+	//		eixo += accel_x + accel_y + accel_z;
 			eixo = accel_x + accel_y + accel_z;
 			eixo = Math.sqrt(eixo);
 			localStorage.setItem("eixo"+loop, eixo);
-		//	document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
+	//		document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
 		/*	document.getElementById("status").innerHTML += "<br>x "+ accel_x; 		
 			document.getElementById("status").innerHTML += "<br>z "+ accel_z; 		
 			document.getElementById("status").innerHTML += "<br>y "+ accel_y; 	*/	
@@ -65,14 +65,14 @@ var app = {
 		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
 		media = soma_eixo / 50;
-		media = parseInt(media);
+	//	media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
 		for (i = 0; i < 50; i++){	
 			var eixo = localStorage.getItem("eixo"+i);
-			v = eixo - media;
-			vetor = parseInt(v);
+			vetor = eixo - media;
+	//		vetor = parseInt(vetor);
 			
 			document.getElementById("status").innerHTML +=  vetor+"/"; 
 			
