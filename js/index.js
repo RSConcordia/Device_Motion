@@ -45,7 +45,7 @@ var app = {
 		
 		if(loop < 50){			
 			document.getElementById("status").innerHTML += "<br><h2>"+loop+"</h2>"; 		
-	//		eixo += accel_x + accel_y + accel_z;
+	
 			eixo = accel_x + accel_y + accel_z;
 			eixo = Math.sqrt(eixo);
 			localStorage.setItem("eixo"+loop, eixo);
@@ -53,7 +53,7 @@ var app = {
 			document.getElementById("status").innerHTML += "<br>x "+ accel_x; 		
 			document.getElementById("status").innerHTML += "<br>z "+ accel_z; 		
 			document.getElementById("status").innerHTML += "<br>y "+ accel_y; 
-	//		soma_eixo = soma_eixo + eixo[loop];
+	
 			soma_eixo = soma_eixo + eixo;
 			
 			loop++;
