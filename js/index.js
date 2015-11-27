@@ -65,7 +65,7 @@ var app = {
 		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
 		media = soma_eixo / 50;
-		media = parseInt(media);
+	//	media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
