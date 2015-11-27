@@ -5,10 +5,8 @@ var app = {
 	var contador = 0;
 	var soma_eixo = 0;
 	var media = 0;
-	//var eixo = [""];
-	var eixo = 0;
-	//var vetor = [""];
-	var vetor = 0;
+	var eixo = new Array();
+	var vetor = new Array();
 	var anterior = false;
 	
 	
@@ -19,10 +17,8 @@ var app = {
 		contador = 0;
 		soma_eixo = 0;
 		media = 0;
-	//	eixo = [""];
-		eixo = 0;
-	//	vetor = [""];
-		vetor = 0;
+		eixo = new Array();
+		vetor = new Array();
 		anterior = false;
 		
 		accelerometer();
@@ -49,16 +45,12 @@ var app = {
 		if(loop < 50){			
 			document.getElementById("status").innerHTML += "<br><h2>"+loop+"</h2>"; 		
 	
-			eixo = accel_x + accel_y + accel_z;
-			eixo = Math.sqrt(eixo);
-			eixo = Math.round(eixo);
-			localStorage.setItem("eixo"+loop, eixo);
-			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
-			document.getElementById("status").innerHTML += "<br>x "+ accel_x; 		
-			document.getElementById("status").innerHTML += "<br>z "+ accel_z; 		
-			document.getElementById("status").innerHTML += "<br>y "+ accel_y; 
+			var xyz = accel_x + accel_y + accel_z;
+			var xyzSqrt = Math.sqrt(xyz);
+			eixo += Math.round(xyzSqrt);
+			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo[loop]; 	
 	
-			soma_eixo = soma_eixo + eixo;
+			soma_eixo = soma_eixo + eixo[loop];
 			
 			loop++;
 			setTimeout(accelerometer, 100);	
@@ -74,14 +66,13 @@ var app = {
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
 		for (i = 0; i < 50; i++){	
-			var eixo = localStorage.getItem("eixo"+i);
-			vetor = eixo - media;
-			vetor = Math.round(vetor);
+			v = eixo[i] - media;
+			vetor += Math.round(v);
 			
-			document.getElementById("status").innerHTML +=  vetor+"/"; 
+			document.getElementById("status").innerHTML +=  vetor[i]+"/"; 
 			
 			if(!anterior){
-				if(vetor > "0"){
+				if(vetor > "1"){
 					contador++;
 					anterior = true;					
 				}
@@ -92,7 +83,7 @@ var app = {
 			}
 			else 
 			{
-				if(vetor < "0") {
+				if(vetor < "-1") {
 					anterior = false; 
 				}
 			}  
