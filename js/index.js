@@ -52,7 +52,7 @@ var app = {
 			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
 			document.getElementById("status").innerHTML += "<br>x "+ accel_x; 		
 			document.getElementById("status").innerHTML += "<br>z "+ accel_z; 		
-			document.getElementById("status").innerHTML += "<br>y "+ accel_y; 	*/	
+			document.getElementById("status").innerHTML += "<br>y "+ accel_y; 
 			soma_eixo = soma_eixo + eixo[loop];
 			soma_eixo = soma_eixo + eixo;
 			
