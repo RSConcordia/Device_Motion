@@ -48,9 +48,11 @@ var app = {
 			var xyz = accel_x + accel_y + accel_z;
 			var xyzSqrt = Math.sqrt(xyz);
 			eixo += Math.round(xyzSqrt);
+			document.getElementById("status").innerHTML += "<br>Eixo "+ xyz; 	
 			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo[loop]; 	
-	
-			soma_eixo = soma_eixo + eixo[loop];
+			
+			var num = eixo[loop];
+			soma_eixo = soma_eixo + num;
 			
 			loop++;
 			setTimeout(accelerometer, 100);	
@@ -60,8 +62,8 @@ var app = {
 		document.getElementById("status").innerHTML += "<br><h2>---§----</h2><br>"; 
 		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
-		media = soma_eixo / 50;
-		media = Math.round(media);
+		var m = soma_eixo / 50;
+		media = Math.round(m);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
