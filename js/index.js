@@ -34,20 +34,24 @@ var app = {
 		alert('Error!');
 	}
 	function motion(acceleration){
-		var accel_x = acceleration.x;
-		var accel_x = Math.pow(accel_x, 2);
+		var x = acceleration.x;
+		var x_int = parseInt(x);
+		var accel_x = Math.pow(x_int, 2);
 		
-		var accel_y = acceleration.y;
-		var accel_y = Math.pow(accel_y, 2);
+		var y = acceleration.y;
+		var y_int = parseInt(y);
+		var accel_y = Math.pow(y_int, 2);
 		
-		var accel_z = acceleration.z;
-		var accel_z = Math.pow(accel_z, 2);
+		var z = acceleration.z;
+		var z_int = parseInt(z);
+		var accel_z = Math.pow(z_int, 2);
 		
 		if(loop < 50){			
 			document.getElementById("status").innerHTML += "<br><h2>"+loop+"</h2>"; 		
 	
 			eixo = accel_x + accel_y + accel_z;
 			eixo = Math.sqrt(eixo);
+			eixo = parseInt(eixo);
 			localStorage.setItem("eixo"+loop, eixo);
 			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
 			document.getElementById("status").innerHTML += "<br>x "+ accel_x; 		
@@ -65,14 +69,14 @@ var app = {
 		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
 		media = soma_eixo / 50;
-	//	media = parseInt(media);
+		media = parseInt(media);
 		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
 		for (i = 0; i < 50; i++){	
 			var eixo = localStorage.getItem("eixo"+i);
 			vetor = eixo - media;
-	//		vetor = parseInt(vetor);
+			vetor = parseInt(vetor);
 			
 			document.getElementById("status").innerHTML +=  vetor+"/"; 
 			
