@@ -44,12 +44,12 @@ var app = {
 		var accel_z = Math.pow(accel_z, 2);
 		
 		if(loop < 50){			
-			document.getElementById("status").innerHTML += "<br><h2>"+loop+"</h2>"; 		
+			document.getElementById("status").innerHTML = "<br><h2>"+loop+"</h2>"; 		
 			//eixo += accel_x + accel_y + accel_z;
 			eixo = accel_x + accel_y + accel_z;
 			eixo = Math.sqrt(eixo);
 			localStorage.setItem("eixo"+loop, eixo);
-			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
+		//	document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 		
 		/*	document.getElementById("status").innerHTML += "<br>x "+ accel_x; 		
 			document.getElementById("status").innerHTML += "<br>z "+ accel_z; 		
 			document.getElementById("status").innerHTML += "<br>y "+ accel_y; 	*/	
@@ -77,7 +77,7 @@ var app = {
 			document.getElementById("status").innerHTML +=  vetor+"/"; 
 			
 			if(!anterior){
-				if(vetor > "0"){
+				if(vetor > "0.5"){
 					contador++;
 					anterior = true;					
 				}
