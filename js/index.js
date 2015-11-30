@@ -72,7 +72,7 @@ var app = {
 			
 			if(!anterior){
 				if(vetor > 1){
-					document.getElementById("status").innerHTML +=  "<br>"+vetor+"/ contador = "+contador; 
+					document.getElementById("status").innerHTML +=  "<h2>"+vetor+"</h2>"; 
 					contador++;
 					anterior = true;					
 				}
