@@ -5,7 +5,7 @@ var app = {
 	var contador = 0;
 	var soma_eixo = 0;
 	var media = 0;
-	var eixo = new Array();
+	var array_eixo = new Array();
 	var anterior = false;
 	
 	
@@ -16,7 +16,7 @@ var app = {
 		contador = 0;
 		soma_eixo = 0;
 		media = 0;
-		eixo = new Array();
+		array_eixo = new Array();
 		anterior = false;
 		
 		accelerometer();
@@ -45,12 +45,12 @@ var app = {
 	
 			var xyz = accel_x + accel_y + accel_z;
 			var xyzSqrt = Math.sqrt(xyz);
-			var round_xyz = Math.round(xyzSqrt);
-			eixo.push(round_xyz);
+			var eixo = Math.round(xyzSqrt);
+			array_eixo.push(eixo);
 			document.getElementById("status").innerHTML += "<br>xyz "+ xyz; 	
-			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo[loop]; 	
+			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 	
 			
-			soma_eixo = soma_eixo + eixo[loop];
+			soma_eixo = soma_eixo + eixo;
 			
 			setTimeout(accelerometer, 100);	
 		}
