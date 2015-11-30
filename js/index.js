@@ -65,7 +65,7 @@ var app = {
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
 		for (i = 0; i < 50; i++){	
-			var v = eixo[i] - media;
+			var v = array_eixo[i] - media;
 			var vetor = Math.round(v);
 			
 			document.getElementById("status").innerHTML +=  vetor+"/"; 
