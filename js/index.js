@@ -41,7 +41,7 @@ var app = {
 		var accel_z = Math.pow(z_int, 2);
 		
 		if(loop < 50){			
-			document.getElementById("status").innerHTML += "<br><h2>"+loop+"</h2>"; 		
+			document.getElementById("status").innerHTML = "<br><h2>"+loop+"</h2>"; 		
 	
 			var xyz = accel_x + accel_y + accel_z;
 			var xyzSqrt = Math.sqrt(xyz);
@@ -56,8 +56,8 @@ var app = {
 		}
 		else
 		{			
-		document.getElementById("status").innerHTML += "<br><h2>---§----</h2><br>"; 
-		document.getElementById("status").innerHTML += "<br>Soma de Todos os Eixos "+ soma_eixo; 
+	//	document.getElementById("status").innerHTML += "<br><h2>---§----</h2><br>"; 
+		document.getElementById("status").innerHTML = "<br>Soma de Todos os Eixos "+ soma_eixo; 
 		
 		var m = soma_eixo / 50;
 		media = Math.round(m);
