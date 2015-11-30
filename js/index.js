@@ -75,10 +75,6 @@ var app = {
 					contador++;
 					anterior = true;					
 				}
-				else
-				{
-					anterior = false;
-				}
 			}
 			else 
 			{
