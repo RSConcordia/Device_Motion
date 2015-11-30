@@ -72,14 +72,14 @@ var app = {
 			
 			if(!anterior){
 				if(vetor > 1){
-					document.getElementById("status").innerHTML +=  "<h2>"+vetor+"</h2>"; 
+					document.getElementById("status").innerHTML +=  "<h2>"+vetor+"</h2>/"; 
 					contador++;
 					anterior = true;					
 				}
 			}
 			else 
 			{
-				if(vetor <= 0) {
+				if(vetor < '-1') {
 					anterior = false; 
 				}
 			}  
