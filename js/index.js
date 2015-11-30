@@ -47,8 +47,8 @@ var app = {
 			var xyzSqrt = Math.sqrt(xyz);
 			var eixo = Math.round(xyzSqrt);
 			array_eixo.push(eixo);
-			document.getElementById("status").innerHTML += "<br>xyz "+ xyz; 	
-			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 	
+		//	document.getElementById("status").innerHTML += "<br>xyz "+ xyz; 	
+		//	document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 	
 			
 			soma_eixo = soma_eixo + eixo;
 			loop++;
