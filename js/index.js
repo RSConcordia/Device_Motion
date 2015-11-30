@@ -6,7 +6,6 @@ var app = {
 	var soma_eixo = 0;
 	var media = 0;
 	var eixo = new Array();
-	var vetor = new Array();
 	var anterior = false;
 	
 	
@@ -17,6 +16,7 @@ var app = {
 		contador = 0;
 		soma_eixo = 0;
 		media = 0;
+		eixo = new Array();
 		anterior = false;
 		
 		accelerometer();
@@ -45,7 +45,8 @@ var app = {
 	
 			var xyz = accel_x + accel_y + accel_z;
 			var xyzSqrt = Math.sqrt(xyz);
-			eixo += Math.round(xyzSqrt);
+			var round_xyz = Math.round(xyzSqrt);
+			eixo.push(round_xyz);
 			document.getElementById("status").innerHTML += "<br>xyz "+ xyz; 	
 			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo[loop]; 	
 			
@@ -64,10 +65,10 @@ var app = {
 		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
 		
 		for (i = 0; i < 50; i++){	
-			v = eixo[i] - media;
-			vetor += Math.round(v);
+			var v = eixo[i] - media;
+			var vetor = Math.round(v);
 			
-			document.getElementById("status").innerHTML +=  vetor[i]+"/"; 
+			document.getElementById("status").innerHTML +=  vetor+"/"; 
 			
 			if(!anterior){
 				if(vetor > "1"){
