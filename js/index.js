@@ -51,7 +51,7 @@ var app = {
 			document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 	
 			
 			soma_eixo = soma_eixo + eixo;
-			
+			loop++;
 			setTimeout(accelerometer, 100);	
 		}
 		else
