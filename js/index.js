@@ -89,6 +89,6 @@ var app = {
 		} 
 		frequencia = contador / 5;
 		
-		document.getElementById("status").innerHTML += "<br><h2>Result</h2><br>Frequência "+ frequencia; 	
+		document.getElementById("status").innerHTML += "<br><h2>Result "+contador+"</h2><br>Frequência "+ frequencia; 	
 		}
 	}
