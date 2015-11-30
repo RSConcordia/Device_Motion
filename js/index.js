@@ -76,10 +76,14 @@ var app = {
 					contador++;
 					anterior = true;					
 				}
+				else if (vetor <= '-2')
+				{
+					anterior = false;
+				}
 			}
 			else 
 			{
-				if(vetor < '-1') {
+				if(vetor <= '-2') {
 					anterior = false; 
 				}
 			}  
