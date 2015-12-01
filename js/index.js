@@ -47,49 +47,47 @@ var app = {
 			var xyzSqrt = Math.sqrt(xyz);
 			var eixo = Math.round(xyzSqrt);
 			array_eixo.push(eixo);
-		//	document.getElementById("status").innerHTML += "<br>xyz "+ xyz; 	
-		//	document.getElementById("status").innerHTML += "<br>Eixo "+ eixo; 	
 			
 			soma_eixo = soma_eixo + eixo;
 			loop++;
 			setTimeout(accelerometer, 100);	
 		}
 		else
-		{			
-	//	document.getElementById("status").innerHTML += "<br><h2>---§----</h2><br>"; 
-		document.getElementById("status").innerHTML = "<br>Soma de Todos os Eixos "+ soma_eixo; 
-		
-		var m = soma_eixo / 50;
-		media = Math.round(m);
-		document.getElementById("status").innerHTML += "<br>Media dos Eixos "+ media+"<br>"; 
-		document.getElementById("status").innerHTML += "<h2>Vetores</h2><br>"; 
-		
-		for (i = 0; i < 50; i++){	
-			var v = array_eixo[i] - media;
-			var vetor = Math.round(v);
+		{		
+			var m = soma_eixo / 50;
+			media = Math.round(m);
 			
-			document.getElementById("status").innerHTML +=  vetor+"/"; 
-			
-			if(!anterior){
-				if(vetor > 1){
-					document.getElementById("status").innerHTML +=  "<h2>"+vetor+"</h2>/"; 
-					contador++;
-					anterior = true;					
+			for (i = 0; i < 50; i++){	
+				var v = array_eixo[i] - media;
+				var vetor = Math.round(v);
+				
+				if(!anterior){
+					if(vetor > 1){
+						contador++;
+						anterior = true;					
+					}
+					else if (vetor <= '-2')
+					{
+						anterior = false;
+					}
 				}
-				else if (vetor <= '-2')
+				else 
 				{
-					anterior = false;
-				}
-			}
-			else 
-			{
-				if(vetor <= '-2') {
-					anterior = false; 
-				}
-			}  
-		} 
-		frequencia = contador / 5;
+					if(vetor <= '-2') {
+						anterior = false; 
+					}
+				}  
+			} 
+			frequencia = contador / 5;
+			
+			document.getElementById("status").innerHTML += "<br><h2>Result</h2><br>Frequência "+ frequencia; 	
 		
-		document.getElementById("status").innerHTML += "<br><h2>Result "+contador+"</h2><br>Frequência "+ frequencia; 	
+			if(frequencia > '1.2' && frequencia < '3.4'){
+				document.getElementById("status").innerHTML += "<br><h2>Is Walking</h2>"; 				
+			}
+			else
+			{
+				document.getElementById("status").innerHTML += "<br><h2>This not Walking</h2>"; 
+			}
 		}
 	}
